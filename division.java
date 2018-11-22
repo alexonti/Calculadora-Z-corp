@@ -1,12 +1,13 @@
-package division;
+package division1;
 import java.util.*;
-public class division {
+public class division1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		double dividendo=0;
 		double divisor=0;
 		double residuo=0;
+		double residuo1=0;
 		double residuo2=0;
 		String simb="";
 		Scanner sc = new Scanner(System.in);
@@ -35,19 +36,35 @@ public class division {
 		}
 		if(resto==0){
 			System.out.println("el resultado de su division es ");
-			System.out.println(residuo);
+			System.out.println(simb+residuo);
 		}
 		if(resto!=0){
-			resto=resto*100;
+			resto=resto*10;
 			while(divisor<=resto){
 				resto=resto-divisor;
-				residuo2++;
+				residuo1++;
 			}
-			System.out.println("el resultado de su division es ");
-			int res1=(int)residuo;
-			int res2=(int)residuo2;
-			System.out.println(simb+res1+","+res2);
+			if(resto==0){
+				System.out.println("el resultado de su division es ");
+				int res=(int)residuo;
+				int res1=(int)residuo1;
+				int res2=(int)residuo2;
+				System.out.println(simb+res+","+res1+res2);
+			}
+			if(resto!=0){
+				resto=resto*10;
+				while(divisor<=resto){
+					resto=resto-divisor;
+					residuo2++;
+					
+				}
+		System.out.println("el resultado de su division es ");
+		int res=(int)residuo;
+		int res1=(int)residuo1;
+		int res2=(int)residuo2;
+		System.out.println(simb+res+","+res1+res2);
 		}
 	}
-
+	}
 }
+
