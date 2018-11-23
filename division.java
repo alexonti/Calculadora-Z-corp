@@ -39,7 +39,7 @@ public class division1 {
 			System.out.println(simb+residuo);
 		}
 		if(resto!=0){
-			resto=resto*10;
+			resto=resto+resto+resto+resto+resto+resto+resto+resto+resto+resto;
 			while(divisor<=resto){
 				resto=resto-divisor;
 				residuo1++;
@@ -52,7 +52,7 @@ public class division1 {
 				System.out.println(simb+res+","+res1+res2);
 			}
 			if(resto!=0){
-				resto=resto*10;
+				resto=resto+resto+resto+resto+resto+resto+resto+resto+resto+resto;
 				while(divisor<=resto){
 					resto=resto-divisor;
 					residuo2++;
