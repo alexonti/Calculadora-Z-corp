@@ -1,0 +1,148 @@
+	double respuesta;
+			double numero=0.00000000000000001;
+			double ex=x;
+			double total=0;
+			double aux=x;
+			double cont = 1;
+			float yfinal;
+			int apo=(int)y;
+			int apox=(int)x;
+			int ele=10;
+			int simb=0;
+			float dec=(float) (y-apo);
+			float dec1=(float) (y-apo);
+			float ex1=Float.toString(dec1).length();
+			if(y>0 && x>0){//x e y mayor a 0
+				
+				if(y>apo){ //y decimal
+					if (x>apox){//x decimal
+						System.out.println("alogo");
+						for(int i=0;i<ex1-2;i++){
+					    	dec=dec1*ele;
+					    	ele=ele*10;
+					   }
+					   ele=ele/10;
+					   apo=apo*ele;  
+						yfinal=dec+apo;
+						for (int h=0;h<yfinal-1;h++){
+							x=x*x;
+							System.out.println(x+"--");
+						}while (cont==1){
+							respuesta = numero*numero;
+							if(respuesta==x){
+								cont=0;
+							}else{
+								numero=numero+0.00000000000000001;
+							}
+							System.out.println(respuesta+"....");
+							ex=x;
+						}ex=numero;
+						
+					}//expo decimal
+					if(x==apox){
+					for(int i=0;i<ex1-2;i++){
+				    	dec=dec1*ele;
+				    	ele=ele*10;
+				   }
+				   ele=ele/10;
+				   apo=apo*ele;  
+					yfinal=dec+apo;               //numero decimal convertido en entero
+					for(int i =0;i<yfinal-1;i++){
+						  for(int j=0;j<aux;j++){
+							total=total+ex;
+						}
+						ex=total;
+						total=0;
+						//System.out.println("*"+ex);
+						
+					}while (cont==1){
+						respuesta = numero*numero;
+						if(respuesta==ex){
+							cont=1;
+						}else{
+							numero=numero+0.00000000000000001;
+						}
+					}ex=numero;
+				 }
+				}
+				else{
+					if(x>apox){
+						for(int i=0;i<y-1;i++){
+							ex=ex*x;
+						}System.out.println(ex);
+					}
+					if(x==apox){
+			           for(int i =0;i<y-1;i++){
+				        for(int j=0;j<aux;j++){
+					    total=total+ex;
+				        }
+				       ex=total;
+				       total=0;
+				//System.out.println("*"+x);
+				
+			           }
+			}
+				}
+			}
+			if(x<0 && y>0){   //si base negativa ------y exp fraccionario = imaginario
+				//System.out.println("algo");
+				if(y==apo){
+					//System.out.println("1.-");
+					if(x==apox){
+						//System.out.println("1.1.-");
+				      ex=0-ex;
+				      aux=0-aux; 
+				      for (int i=0;i<y-1;i++){
+					    for(int j=0;j<aux;j++){
+						total=total+ex;
+						
+					 }
+					  simb=1-simb;
+					  //System.out.println(simb);
+				      ex=total;
+				      total=0;
+				      }if(simb==0){
+						ex=0-ex;
+					}
+					}if (x<apox){
+						//System.out.println("1.2.-");
+						for(int i=0;i<y-1;i++){
+							ex=ex*x;
+							//System.out.println(ex);
+						}
+					}
+				
+				}
+				if(y>apo){
+					
+				}
+				if(y<0 && x>0){}
+				if(y<0 && x<0){
+			//el punto lo toma como valor
+			
+
+			/*}else{
+				
+				for(int j=0;j<aux;j++){
+					cont=cont+y;
+					System.out.println(cont+"-");
+				}
+				for(int i =0;i<y-1;i++){
+					
+					for(int h=0;h<cont;h++){
+						total=total+x;
+						System.out.println(total);
+						
+					}
+					x=total;
+					total=0;
+					System.out.println("*"+x);
+				}
+			}*/
+			//return x;
+		}
+			
+
+		}
+			
+			return ex;}
