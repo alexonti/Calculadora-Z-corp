@@ -1,0 +1,16 @@
+static String DecBin(float x){
+	int res = 0;
+	String mensaje;
+	int aux;
+	int con=0;
+	int cont=Float.toString(x).length();
+	while (cont!=con){
+		aux=(int) (x/2);
+		res=(int) (x%2);
+		x=aux;
+		System.out.print(res);
+		con++;
+	}mensaje=("   Aqui tu resultado");
+	
+	return mensaje;
+}
