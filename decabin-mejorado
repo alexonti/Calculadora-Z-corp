@@ -1,0 +1,24 @@
+static String DecBin(float x){
+	
+	int res = 0;
+	String mensaje;
+	int aux;
+	int con=0;
+	int cont=Float.toString(x).length();
+	int aux1[]=new int [cont];
+	while (cont!=con){
+		aux=(int) (x/2);
+		res=(int) (x%2);
+		x=aux;
+		aux1[con]=res;
+		con++;
+	}mensaje=("   Aqui tu resultado");
+	
+	for(int i =0;i<cont;i++){
+		aux=aux1[con-1];
+		System.out.print(aux);
+		con--;
+	}
+	return mensaje;
+}
+}
