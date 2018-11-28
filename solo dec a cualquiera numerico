@@ -1,0 +1,21 @@
+static int DecTodas (int num,int y){
+	int x;
+	int resto;
+	int con=0;
+	int cont=Float.toString(num).length();
+	int aux[]=new int [cont];
+	while (cont!=con){
+		x=(int) (num/y);
+		resto=(int) (num%y);
+		num=x;
+		aux[con]=resto;
+		System.out.print(resto+"----");
+		con++;
+	
+}for(int i =0;i<cont;i++){
+	x=aux[con-1];
+	System.out.print(x);
+	con--;
+}
+	return cont;
+}
