@@ -1,0 +1,27 @@
+public class Cualdec {
+
+	public static void main(String[] args) {
+		 int num=531;
+		 //base q se qiere cambiar a decimal
+		 int y=8;
+		 int w=TodoDec(num,y);
+
+	}
+static int TodoDec(int x,int y){
+	int sumatoria = 0;
+	int aux;
+	double cifras;
+	int cifras2;
+	int cont=Float.toString(x).length();
+	for(int i=0;i<cont-1;i++){
+		cifras= (x*0.1);               //transformo el entero en decimal
+		cifras2=(int) (x*0.1);         //lo mismo q el anterior pero lo casteo a entero
+		x=cifras2;                     //asigno el valor anterior a x para que siga ejecutando
+		cifras2=(int) ((cifras-cifras2)/0.1);       //separo la parte decimal del entero luego lo transformmo en entero
+		aux=(int) (cifras2*Math.pow(y, i));         //se multiplica por la base elevado a la posicion
+		sumatoria=sumatoria+aux;                    //sumatoria 
+		System.out.println(sumatoria);              //muestro y comparto 
+	}
+	return cont;
+}
+}
