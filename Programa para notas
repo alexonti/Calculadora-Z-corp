@@ -1,0 +1,40 @@
+//creacion de ID
+
+import java.util.Scanner;
+
+public class MuestraLaNota {
+
+	public static void main(String[] args) {
+		String INFO ="";
+		String Curso ="";
+		String Alumno ="";
+		String Evaluacion ="";
+		String Nota = "";
+		Scanner Entrada=new Scanner(System.in);
+
+		System.out.println ("Ingrese nombre del curso ");
+		Curso =Entrada.nextLine();
+		System.out.println ("Ingrese nombre y apellido del alumno ");
+		Alumno =Entrada.nextLine();
+		System.out.println ("numero de evaluacion a ingresar ");
+		Evaluacion ="N".concat(Entrada.nextLine());
+		System.out.println ("ingrese nota de evaluacion ");
+		Nota =Entrada.nextLine();
+
+		INFO = Curso+"_"+Alumno+"_"+Evaluacion+"_"+Nota;
+		System.out.print(INFO);
+    
+   //Fin creacion ID
+   
+   //IDEAS para rellenar STRING
+   
+   String Notas[]
+
+While (curso ¡=0)
+	Preguntar Curso
+	For (int i = 0, es el mismo curso = False, i++)
+
+		Preguntar alumno 
+		preguntar Evaluacion
+		Preguntar calificacion
+		Preguntar es el mismo curso? T/F
