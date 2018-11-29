@@ -5,10 +5,10 @@ public class Cambiodebases {
 		//favor de omitir scanner x ahora
 		
 		System.out.println("ingrese el numero a transformar");
-		String valor=("531");
+		String valor=("1011");
 		System.out.println("ingrese el numero de la base que quiere transformar");
-		int x=8;
-		int num;
+		int x=2;
+		int num = 0;
 		System.out.println("ingrese el numero de la base a la que desea transformar(hasta base 16)");
 		int y=10;
 		try{num=Integer.parseInt(valor);}
@@ -16,11 +16,45 @@ public class Cambiodebases {
 			if(y==10){
 				int respuesta=AlfaDec(valor,y);
 				System.out.println(respuesta);
-			}
+			}if(y<10){
+				int res=AlfaDec(valor,10);
+				int respuesta=DecTodas(res,y);
+				System.out.println(respuesta);
+			}if (y>10 && y<=16){
+				int res=AlfaDec(valor,10);
+				String respuesta=decalfa(res,y);
+				System.out.println(respuesta);
+			}else{System.out.println("base no valida"+"alfa a base");}
+		}if(x==10){
+			if(y==10){
+				System.out.println(num);
+			}if (y<10){
+				int respuesta=DecTodas(num,y);
+				System.out.println(respuesta);
+			}if (y>10 && y<=16){
+				String respuesta=decalfa(num,y);
+				System.out.println(respuesta);
+			}else{System.out.println("base no valida"+"dec a base");}
+			
+		}if (x<10){
+			if(y==10){
+				int respuesta=TodoDec(num,y);
+				System.out.println(respuesta);
+			}if (y<10){
+				int res=TodoDec(num,x);
+				int respuesta=DecTodas(res,y);
+				System.out.println(respuesta);
+			}if (y>10 && y<=16){
+				int res=TodoDec(num,x);
+				String respuesta=decalfa(res,y);
+				System.out.println(respuesta);
+			}else{System.out.println("base no valida"+"num a base");}
+		}
+			
 		}
 	
-	}
-static int DecTodas (int num,int y){
+	
+static int DecTodas (int num,int y){//funciona con binario igual
 	int x;
 	int resto;
 	int con=0;
@@ -40,7 +74,7 @@ static int DecTodas (int num,int y){
 }
 	return cont;
 }
-static int TodoDec(int x,int y){
+static int TodoDec(int x,int y){//funciona con binario
 	int sumatoria = 0;
 	int aux;
 	double cifras;
@@ -53,7 +87,7 @@ static int TodoDec(int x,int y){
 		cifras2=(int) ((cifras-cifras2)/0.1);
 		aux=(int) (cifras2*Math.pow(y, i));
 		sumatoria=sumatoria+aux;
-		System.out.println(sumatoria);
+		//System.out.println(sumatoria);
 	}
 	return sumatoria;
 }
@@ -96,5 +130,48 @@ static int AlfaDec(String numero,int base){
 			}
 		return (int) sumatoria;
 	
+}
+static String decalfa(int ini,int abase){
+	int x;
+	int resto;
+	int con=0;
+	String resp = null;
+	int cont=Float.toString(ini).length();
+	int aux[]=new int [cont];
+	while (cont!=con){
+		x=(int) (ini/abase);
+		resto=(int) (ini%abase);
+		ini=x;
+		aux[con]=resto;
+		con++;
+}
+	for(int i =0;i<cont;i++){
+		x=aux[con-1];
+		switch (x){
+		case 10:
+			resp="A";
+			break;
+		case 11:
+			resp="B";
+			break;
+		case 12:
+			resp="C";
+			break;
+		case 13:
+			resp="D";
+			break;
+		case 14:
+			resp="E";
+			break;
+		case 15:
+			resp="F";
+			break;
+		default : 
+			resp=Integer.toString(x);
+		}
+		System.out.print(resp);
+		con--;
+	}
+	return resp;
 }
 }
