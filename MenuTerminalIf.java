@@ -2,13 +2,12 @@ package menuterminal;
 import java.util.*;
 import java.math.*;
 public class MenuTerminalIf {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("      ******************************");
-        System.out.println("      * **********Z-corp********** *");
-        System.out.println("      *    Calculadora Zeneniana   *");
-        System.out.println("      ******************************");
+		System.out.println("      * * * * * * * * * * * * * * * *");
+        System.out.println("      * **********Z-corp**********  *");
+        System.out.println("      *    Calculadora Zeneniana    *");
+        System.out.println("      * * * * * * * * * * * * * * * * ");
         System.out.println();
         System.out.println("              Bienvenido          ");
         System.out.println();
@@ -20,41 +19,38 @@ public class MenuTerminalIf {
         boolean salir = false;
         boolean regresar = false;
         int opcion = 0; //menu principal
-        int opcion2;// menu operaciones matem�ticas
+        int opcion2;// menu operaciones matemàticas
         int opcion3;// menu multiplicacion
         int opcion4;
         int opcion5;
-        int opcion6;
-        int opcionsalir;
-        int opcionregresar;
-        int opcionacerca;
+     
         
        // System.out.println("Calculadora Z-Corp \n\n");
        // System.out.println("Bienvenido \n\n");
-       // System.out.println("Selecciona una opci�n \n");
+       // System.out.println("Selecciona una opción \n");
         
  
         while (!salir) {
  
-            System.out.println("1. Operaciones matem�ticas");
+            System.out.println("1. Operaciones matemáticas");
             System.out.println("2. Operaciones binarias");
             System.out.println("3. Orden de datos");
             System.out.println("4. Promedios");
-            System.out.println("5. Acerca");// muestra informaci�n acerca de quien realizo el trabajo y email de contacto.
+            System.out.println("5. Acerca");// muestra información acerca de quien realizo el trabajo y email de contacto.
             System.out.println("6. Salir \n");
             
             
  
             try {
             	
-                System.out.println("Ingrese una opci�n \n");
+                System.out.println("Ingrese una opción \n");
                 opcion = sn.nextInt();
                 
  //menu general de la calculadora
                 
                 switch (opcion) {
                     case 1:
-                        System.out.println("Has seleccionado Operaciones matem�ticas \n");
+                        System.out.println("Has seleccionado Operaciones matemáticas \n");
                         break;
                     case 2:
                         System.out.println("Has seleccionado Operaciones binarias \n");
@@ -70,20 +66,21 @@ public class MenuTerminalIf {
                         System.out.println();
                         break;
                     case 6:
-                    	System.exit(opcion);
+                    	
                     	     
-                    	System.out.println("Programa terminado");
+                    	System.out.println("\n ******    Programa terminado    ******");
                     	            	
                         salir = true;
+                        System.exit(opcion); //Termina el programa
                         break;
                     default:
-                        System.out.println("\nSeleccione una opci�n entre 1 y 6 \n");
+                        System.out.println("\nSeleccione una opción entre 1 y 6 \n");
                        
                 } //switch menu principal
                 	} //try menu principal
                
              catch (InputMismatchException e) {
-                System.out.println("Debes insertar un n�mero");
+                System.out.println("Debes insertar un número");
                 sn.next();
                 
             } // catch menu principal
@@ -93,22 +90,19 @@ public class MenuTerminalIf {
             
             if(opcion==1) {
             	
-            	System.out.println("Seleccione una opci�n");
+            	System.out.println("Seleccione una opción");
             	System.out.println();
             	
             	System.out.println("1. Suma");
             	System.out.println("2. Resta");
-            	System.out.println("3. Multiplicaci�n");
-            	System.out.println("4. Divisi�n");
+            	System.out.println("3. Multiplicación");
+            	System.out.println("4. División");
             	System.out.println("5. Regresar \n");
-
-
             	try {
             		
-            	    System.out.println("Ingrese una opci�n \n");
+            	    System.out.println("Ingrese una opción \n");
             	    opcion2 = sn.nextInt();
             	    System.out.println();
-
             	    switch (opcion2) {
             	        case 1:
             	            System.out.println("Has seleccionado Suma \n");
@@ -147,15 +141,16 @@ public class MenuTerminalIf {
             	            total=Sumar(x, y);                          // se guarda resultado de funcion para codigo de abajo
             	            BigDecimal bigDecimal = new BigDecimal(total).setScale(2, RoundingMode.HALF_UP); //Codigo para aprox. resultado double
             	            System.out.println();
-            	            System.out.println("La suma es: "+bigDecimal.doubleValue()); // Se completa el codigo anterior para mostrar resultado aprox.        
+            	            System.out.println();
+            	            System.out.println("******************************");
+            	            System.out.println("      La suma es: "+bigDecimal.doubleValue()); // Se completa el codigo anterior para mostrar resultado aprox.        
+            	            System.out.println("******************************");
             	            System.out.println();
             	            System.out.println();
             	            System.out.println();
             	            System.out.println();
             	            System.out.println();
-            	            System.out.println();
-            	            System.out.println();
-            	            System.out.println("Seleccione una opci�n");
+            	            System.out.println("Seleccione una opción");
             	            System.out.println();
             	           
             	            
@@ -205,12 +200,12 @@ public class MenuTerminalIf {
     	            System.out.println();
     	            System.out.println();
     	            System.out.println();
-    	            System.out.println("Seleccione una opci�n");
+    	            System.out.println("Seleccione una opción");
     	            System.out.println();
             	            break;
             	            
             	        case 3:
-            	            System.out.println("Has seleccionado Multiplicaci�n \n");
+            	            System.out.println("Has seleccionado Multiplicación \n");
             	            Scanner teclado3=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
             	            double x2 = 0;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
             	            double y2 = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
@@ -262,26 +257,25 @@ public class MenuTerminalIf {
             	            System.out.println();
             	            System.out.println();
             	            System.out.println();
-            	            System.out.println("Seleccione una opci�n");
+            	            System.out.println("Seleccione una opción");
             	            System.out.println();
        
             	            break;
             	        case 4:
-            	            System.out.println("Has seleccionado Divisi�n \n");
+            	            System.out.println("Has seleccionado División \n");
             	            break;
             	        case 5:
-            	        	System.out.println("\n Ingrese una opci�n \n");
-            	        	regresar = true; //opci�n que nos devuelve al menu anterior
+            	        	System.out.println("\n Ingrese una opción \n");
+            	        	regresar = true; //opción que nos devuelve al menu anterior
             	            
             	            break;
             	        default:
-            	            System.out.println("\nSeleccione una opci�n entre 1 y 5 \n");
+            	            System.out.println("\nSeleccione una opción entre 1 y 5 \n");
             	    
             	    } //switch operaciones matematicas
             	}//try menu principal
-
             	catch (InputMismatchException e) {
-            	    System.out.println("Debes insertar un n�mero");
+            	    System.out.println("Debes insertar un número");
             	    sn.next();
             	    
             	}
@@ -289,7 +283,7 @@ public class MenuTerminalIf {
         
             if (opcion==2) {
             	
-            	System.out.println("Seleccione una opci�n");
+            	System.out.println("Seleccione una opción");
             	System.out.println();
             	System.out.println("1. Suma binaria");
                 System.out.println("2. Suma hexadecimal");
@@ -300,22 +294,19 @@ public class MenuTerminalIf {
          
                 try {
                 	
-                    System.out.println("Ingrese una opci�n \n");
+                    System.out.println("Ingrese una opción \n");
                     opcion3 = sn.nextInt();
-
                     switch (opcion3) {
                         case 1:
                             System.out.println("Has seleccionado Suma binaria \n");
                             
                             Scanner Entrada=new Scanner(System.in);
                             String n1="",n2="";
-
                             	//Se pide 1er numero binario
-                            System.out.print("Ingrese 1� numero ");
+                            System.out.print("Ingrese 1º numero ");
                             n1=Entrada.next();
-
                             	//Se pide 2do numero binario
-                            System.out.print("Ingrese 2� numero ");
+                            System.out.print("Ingrese 2º numero ");
                             n2=Entrada.next();
                             System.out.println();
                             System.out.print("Su resultado de la suma binaria es "+Suma(n1,n2));
@@ -326,7 +317,7 @@ public class MenuTerminalIf {
             	            System.out.println();
             	            System.out.println();
             	            System.out.println();
-            	            System.out.println("Seleccione una opci�n");
+            	            System.out.println("Seleccione una opción");
             	            System.out.println();
                
                             break;
@@ -339,127 +330,353 @@ public class MenuTerminalIf {
                             System.out.println("Has seleccionado Cambio de base \n");
                             
                             Scanner sc=new Scanner (System.in);
-                    		System.out.println("ingrese el numero a transformar");
+                    		System.out.println("Ingrese el numero a transformar");
                     		String valor5="";
                     		valor5=sc.nextLine();
-                    		System.out.println("ingrese el numero de la base que quiere transformar");
+                    		System.out.println("Ingrese el numero de la base a transformar");
                     		int x5=0;
                     		x5=sc.nextInt();
                     		int num5 = 0;
-                    		System.out.println("ingrese el numero de la base a la que desea transformar(hasta base 16)");
+                    		System.out.println("Ingrese el numero de la base a la que desea transformar(hasta base 16)");
                     		int y5=0;
                     		y5=sc.nextInt();
-                    		sc.close();
+                    		
                     		try{num5=Integer.parseInt(valor5);}
                     		catch (NumberFormatException ex){
                     			if(y5==2){
                     				int resp=AlfaDec(valor5,10);
                     				String respuesta=Decbin(resp,2);
-                    				System.out.println(respuesta);
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}
                     			if(y5==10){
                     				int respuesta=AlfaDec(valor5,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if(y5<10){
                     				int res=AlfaDec(valor5,10);
                     				int respuesta=DecTodas(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if (y5>10 && y5<=16){
                     				int res=AlfaDec(valor5,10);
                     				String respuesta=decalfa(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
-                    			}else{System.out.println("base no valida"+"");}
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
+                    			}else{System.out.println();
+                	            System.out.println();
+                	            System.out.println("******************************");
+                	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                	            System.out.println("******************************");
+                	            System.out.println();}
                     		}
                     		if(x5==10){
                     			if(y5==2){
                     				String respuesta=Decbin(num5,y5);
-                    				System.out.println(respuesta);
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}
                     			if(y5==10){
                     				System.out.println(num5+"");
-                    				System.exit(0);
+                    				break;
                     			}if (y5<10 && y5>2){
                     				int respuesta=DecTodas(num5,y5);
-                    				System.out.println(respuesta+"--");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if (y5>10 && y5<=16){
                     				String respuesta=decalfa(num5,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
-                    			}else{System.out.println("base no valida"+"");}
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
+                    			}
+                    			else{
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();}
                     			
                     		}if (x5<10 && x5>2){
                     			if (y5==2){
                     				int res=TodoDec(num5,x5);
                     				String respuesta=Decbin(res,2);
-                    				System.out.println(respuesta);
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}
                     			if(y5==10){
                     				int respuesta=TodoDec(num5,x5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if (y5<10){
                     				int res=TodoDec(num5,x5);
                     				//System.out.println(res);
                     				int respuesta=DecTodas(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if (y5>10 && y5<=16){
                     				int res=TodoDec(num5,x5);
                     				String respuesta=decalfa(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
-                    			}else{System.out.println("base no valida"+"");}
-                    		}if(x5==2){
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
+                    			}
+                    			else{System.out.println();
+                	            System.out.println();
+                	            System.out.println("******************************");
+                	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                	            System.out.println("******************************");
+                	            System.out.println();
+                	            }
+                    		}
+                    		
+                    		if(x5==2){
                     			if(y5==2){
                     				System.out.println(num5);
                     			}
                     			if(y5==10){
                     			int respuesta=Bindec(num5,2);
-                    			System.out.println(respuesta);
+                    			System.out.println();
+                	            System.out.println();
+                	            System.out.println("******************************");
+                	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                	            System.out.println("******************************");
+                	            System.out.println();
+                	            System.out.println();
+                	            System.out.println();
+                	            System.out.println();
+                	            System.out.println();
+                	            System.out.println("Seleccione una opción");
+                	            System.out.println();
                     			}
                     			if(y5<10){
                     				int res=Bindec(num5,2);
                     				int respuesta=DecTodas(res,y5);
-                    				System.out.println(respuesta);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
                     			}
                     			if(y5>10){
                     				int res=Bindec(num5,2);
                     				System.out.println(res);
                     				String respuesta=decalfa(res,y5);
-                    				System.out.println(respuesta);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
                     			}
                     		}if(x5>10){
                     			if(y5==2){
                     				int resp=AlfaDec(valor5,10);
                     				String respuesta=Decbin(resp,2);
-                    				System.out.println(respuesta);
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}
                     			if(y5==10){
                     				int respuesta=AlfaDec(valor5,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if(y5<10){
                     				int res=AlfaDec(valor5,10);
                     				//System.out.println(res);
                     				int respuesta=DecTodas(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
                     			}if (y5>10 && y5<=16){
                     				int res=AlfaDec(valor5,10);
                     				String respuesta=decalfa(res,y5);
-                    				System.out.println(respuesta+"");
-                    				System.exit(0);
-                    }else{System.out.println("base no valida"+"");}}
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("Seleccione una opción");
+                    	            System.out.println();
+                    				break;
+                    }
+                    			else{
+                    				System.out.println();
+                    	            System.out.println();
+                    	            System.out.println("******************************");
+                    	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("******************************");
+                    	            System.out.println();
                     			
-                            break;
+                            break;}}
                             
                         case 4:
                             System.out.println("Has seleccionado Decimal - binario \n");
@@ -468,16 +685,16 @@ public class MenuTerminalIf {
                             System.out.println("Has seleccionado Decimal - hexadecimal \n");
                             break;
                         case 6:
-                        	System.out.println("\n Ingrese una opci�n \n");
+                        	System.out.println("\n Ingrese una opción \n");
                             regresar = true;
                             break;
                         default:
-                            System.out.println("\nSeleccione una opci�n entre 1 y 5 \n");
+                            System.out.println("\nSeleccione una opción entre 1 y 5 \n");
                     }
                 } 
             
             catch (InputMismatchException e) {
-                    System.out.println("Debes insertar un n�mero");
+                    System.out.println("Debes insertar un número");
                     sn.next();
                     
                 }
@@ -489,7 +706,7 @@ public class MenuTerminalIf {
             
             if(opcion==3) {
             	
-            	System.out.println("Seleccione una opci�n");
+            	System.out.println("Seleccione una opción");
             	System.out.println();
             	
             	System.out.println("1. Aleatorio");
@@ -499,9 +716,8 @@ public class MenuTerminalIf {
          
                 try {
                 	
-                    System.out.println("Ingrese una opci�n \n");
+                    System.out.println("Ingrese una opción \n");
                     opcion3 = sn.nextInt();
-
                     switch (opcion3) {
                         case 1:
                             System.out.println("Has seleccionado Orden Aleatorio \n");
@@ -514,10 +730,10 @@ public class MenuTerminalIf {
                             regresar = true;
                             break;
                         default:
-                            System.out.println("\nSeleccione una opci�n entre 1 y 3 \n");
+                            System.out.println("\nSeleccione una opción entre 1 y 3 \n");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Debes insertar un n�mero");
+                    System.out.println("Debes insertar un número");
                     sn.next();
                     
                 }
@@ -525,7 +741,7 @@ public class MenuTerminalIf {
             
             if(opcion==4) {
             	
-            	System.out.println("Seleccione una opci�n");
+            	System.out.println("Seleccione una opción");
             	System.out.println();
             	
             	System.out.println("1. General");
@@ -535,9 +751,8 @@ public class MenuTerminalIf {
          
                 try {
                 	
-                    System.out.println("Ingrese una opci�n \n");
+                    System.out.println("Ingrese una opción \n");
                     opcion4 = sn.nextInt();
-
                     switch (opcion4) {
                         case 1:
                             System.out.println("Has seleccionado Promedio General \n");
@@ -550,10 +765,10 @@ public class MenuTerminalIf {
                             regresar = true;
                             break;
                         default:
-                            System.out.println("\nSeleccione una opci�n entre 1 y 3 \n");
+                            System.out.println("\nSeleccione una opción entre 1 y 3 \n");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Debes insertar un n�mero");
+                    System.out.println("Debes insertar un número");
                     sn.next();
                     
                 }
@@ -564,34 +779,36 @@ public class MenuTerminalIf {
             } // if menu ponderado
             
             if(opcion==5) {
-            	
-            	System.out.println("      ******************************");
-                System.out.println("      * **********Z-corp********** *");
-                System.out.println("      *    Calculadora Zeneniana   *");
-                System.out.println("      ******************************");
-                System.out.println();
-                System.out.println("            Creada y dise�ada       ");
-                System.out.println("            By Hijos de Zenen       ");
-                System.out.println();
-                System.out.println();
-                System.out.println("             V�ctor Barraza         ");
-                System.out.println();
-                System.out.println("             Zenen Canales          ");
-                System.out.println();
-                System.out.println("             Luis Galleguillos      ");
-                System.out.println(); 
-                System.out.println("             Miguel Ocque           ");
-                System.out.println();
-                System.out.println("             Alejandro Ontiveros    ");
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println("            Si lo dijo Zenen       ");
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println("               *Es ley*            ");
-                
+            	System.out.println("* * * * * * * * * * * * * * * * * * * * * *");
+            	System.out.println("*      ******************************     *");
+                System.out.println("*      *        ***Z-corp***        *     *");
+                System.out.println("*      *    Calculadora Zeneniana   *     *");
+                System.out.println("*      ******************************     *");
+                System.out.println("*                                         *");
+                System.out.println("*            Creada y diseñada            *");
+                System.out.println("*            By Hijos de Zenen            *");
+                System.out.println("*           *******************           *");
+                System.out.println("*                                         *");
+                System.out.println("*             Víctor Barraza              *");
+                System.out.println("*                                         *");
+                System.out.println("*             Zenen Canales               *");
+                System.out.println("*                                         *");
+                System.out.println("*             Luis Galleguillos           *");
+                System.out.println("*                                         *");
+                System.out.println("*             Miguel Ocque                *");
+                System.out.println("*                                         *");
+                System.out.println("*             Alejandro Ontiveros         *");
+                System.out.println("*                                         *");
+                System.out.println("*                                         *");
+                System.out.println("*                                         *");
+                System.out.println("*            Si lo dijo Zenen             *");
+                System.out.println("*                                         *");
+                System.out.println("*                                         *");
+                System.out.println("*                                         *");
+                System.out.println("*              ***Es ley***               *");
+                System.out.println("*                                         *");
+                System.out.println("* * * * * * * * * * * * * * * * * * * * * *");
+
                 break;
                 
                 
@@ -614,16 +831,16 @@ public class MenuTerminalIf {
         
 	}// main string
 	
-	private static double Sumar(double x, double y) {
-		// TODO Auto-generated method stub
-		return 0;
+	public static double Sumar(double x, double y){  // Se declara la Funcion Sumar de tipo Double con dos parametros de entrada x e y
+        double total;               // Se declara variable Double total para guardar el total de la suma de dos valores
+        total= x + y;               // Se le asigna a variable total la suma de los dos parametros de entrada
+return total;
 	}
-
-	private static double Restar(double x1, double y1) {
-		// TODO Auto-generated method stub
-		return 0;
+	public static double Restar(double x, double y){
+        double diferencia;               // Se declara variable Double dif. para guardar la diferencia entre x - y
+        diferencia= x - y;               // Se le asigna a variable dif. de los dos parametros de entrada
+return diferencia;
 	}
-
 	public static double Multiplicar1(double x2, double y2){   
         double producto=0.0;
         if((x2>0)&&(y2>0)){               // se evalua si valore de x e y son positivos
@@ -660,14 +877,11 @@ public class MenuTerminalIf {
 		//recibe y convierte numeros binarios
 	int a1=Integer.parseInt(n1,2);
 	int a2=Integer.parseInt(n2,2);
-
 		//Realiza calculo
 	int c=a1+a2;
-
 		//Convierte resultado de la operacion en String
 	String Result=Integer.toString(c,2);
 	return Result; 
-
 	}
 	
 	static String Decbin (int num5,int y5){//decimal binario
@@ -694,7 +908,6 @@ public class MenuTerminalIf {
 		//System.out.println(acu+"acumulador");
 		con5--;
 	}
-
 		return acu5;
 	}
 	
@@ -743,7 +956,6 @@ static int DecTodas (int num5,int y5){
 	//System.out.print(x+"");
 	con5--;
 }acu5=acu5/10;
-
 	return acu5;
 }
 static int TodoDec(int x5,int y5){//funciona con binario
@@ -856,4 +1068,3 @@ static String decalfa(int ini5,int abase5){
 	return acu5;
 }
 }// class
-
