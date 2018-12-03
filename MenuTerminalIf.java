@@ -240,14 +240,15 @@ public class MenuTerminalIf {
             	                    System.out.println( "error");
             	            }
             	            }
-            	             
-            	            xMult=(double)x2*10;
-            	            yMult=(double)y2*10;
+            	            
+				    
+            	           // xMult=(double)x2*10;
+            	           // yMult=(double)y2*10;
             	            
             	            res1=Multiplicar1(xMult, yMult);
-            	            res2=res1/100;
+            	          //  res2=res1/100;
             	            
-            	            BigDecimal resAprox = new BigDecimal(res2).setScale(2, RoundingMode.HALF_UP); //Codigo para aprox. resultado double
+            	            BigDecimal resAprox = new BigDecimal(res1).setScale(2, RoundingMode.HALF_UP); //Codigo para aprox. resultado double
             	            System.out.println();
             	            System.out.println("El producto es: "+resAprox.doubleValue()); // Se completa el codigo anterior para mostrar resultado aprox.        
             	            System.out.println();
@@ -264,7 +265,7 @@ public class MenuTerminalIf {
             	        case 4:
             	            System.out.println("Has seleccionado División \n");
             	            break;
-            	        case 5:
+            	        case 5://la funcion de division esta abajo 
             	        	System.out.println("\n Ingrese una opción \n");
             	        	regresar = true; //opción que nos devuelve al menu anterior
             	            
@@ -841,8 +842,111 @@ return total;
         diferencia= x - y;               // Se le asigna a variable dif. de los dos parametros de entrada
 return diferencia;
 	}
+/*public static double division(double dividendo, double divisor){
+	
+	double residuo=0;
+	double residuo1=0;
+	double residuo2=0;
+	String simb="";
+	int res;
+	int res1;
+	int res2;
+	double result = 0;
+	double auxr;
+	int result2 = 0;
+	if(divisor==0){
+		System.out.println("no puede ser cero el divisor");
+	}
+	if(dividendo<0&&divisor<0){
+		dividendo=0-dividendo;
+		divisor=0-divisor;
+		simb="";
+	}
+	if(dividendo<0&&divisor>0){
+		dividendo=0-dividendo;
+		simb="-";
+	}
+	if(dividendo>0&&divisor<0){
+		divisor=0-divisor;
+		simb="-";
+	}
+	
+	double resto=dividendo;
+	while(divisor<=resto){
+		resto=resto-divisor;
+		residuo++;
+	}
+	
+	if(resto==0){
+		System.out.println("el resultado de su division es ");
+		System.out.println(simb+residuo);
+	}
+	if(resto!=0){
+		resto=resto+resto+resto+resto+resto+resto+resto+resto+resto+resto;
+		while(divisor<=resto){
+			resto=resto-divisor;
+			residuo1++;
+		}
+		if(resto==0){
+			System.out.println("el resultado de su division es ");
+			res=(int)residuo;
+			res1=(int)residuo1;
+			res2=(int)residuo2;
+			String suprem=simb+res+"."+res1+res2;
+			result=new Double(suprem).doubleValue();
+			result2=(int)result;
+			auxr=result-result2;
+			if(auxr>0.99&&auxr<1){
+				result2=result2+1;
+				System.out.println(result2);
+			}else{
+				System.out.println(result);
+				
+				}
+				}
+			}	
+
+		if(resto!=0){
+			resto=resto+resto+resto+resto+resto+resto+resto+resto+resto+resto;
+			while(divisor<=resto){
+				resto=resto-divisor;
+				residuo2++;
+				
+			}
+			
+	//System.out.println("el resultado de su division es ");
+	res=(int)residuo;
+	res1=(int)residuo1;
+	res2=(int)residuo2;
+	String suprem=simb+res+"."+res1+res2;
+	result=new Double(suprem).doubleValue();
+	
+	result2=(int)result;
+	
+	auxr=result-result2;
+	
+	if(auxr>0.99&&auxr<1){
+		result2=result2+1;
+		
+	}else{	
+		}
+		}return result2;
+		}
+//falta potencia
+}*/
+
+	
+	
 	public static double Multiplicar1(double x2, double y2){   
-        double producto=0.0;
+        double aux = x,auy=y;
+ 	for(int i=0;i<9;i++){//x*10
+     	x2=x2+aux;
+     }
+ 	for(int j=0;j<9;j++){//y*10
+ 		y2=y2+auy;
+ 	}
+		
+	double producto=0.0;
         if((x2>0)&&(y2>0)){               // se evalua si valore de x e y son positivos
             for(int i2=0;i2<x2;i2++){
                 producto=producto+y2;
@@ -867,8 +971,8 @@ return diferencia;
             for(int i2=0;i2<x2;i2++){
                 producto=producto+y2;
             }
-            producto=producto*(-1);
-        }
+            producto=producto-(producto+producto);//cambio de signo
+        }producto=producto/100;
         return producto;
 }
 	
