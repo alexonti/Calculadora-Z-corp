@@ -1,78 +1,80 @@
-package cursoalumnota;
+package ingresodatos;
 
 import java.util.Scanner;
 
-/**
- *
- * @author BRENDA
- */
-public class CursoAlumNota {
+public class IngresoDatos {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        /*
-                                    String string = "123-654321";
-                                    String[] parts = string.split("-");
-                                    String part1 = parts[0]; // 123
-                                    String part2 = parts[1]; // 654321
-         */
+        Scanner teclado = new Scanner(System.in);
+        int n = 0;
+        int n1 = 0;
+        int n2 = 0;
+        System.out.print("*************************************************************\n"
+                + "******************INGRESE LO SOLICITADO**********************\n"
+                + "*************************************************************\n");
+        System.out.print("Cantidad de Cursos\t: ");
+        n = teclado.nextInt();
+        System.out.print("Cantidad de Alumnos\t: ");
+        n1 = teclado.nextInt();
+        System.out.print("Cantidad de Notas\t: ");
+        n2 = teclado.nextInt();
+        teclado.nextLine();
 
-        int fila = 2;
-        int columna = 2;
-        int cantidad = 2;
+        int cursoz = n;   //curso
+        int alumnoy = n1; //alumno
+        int notax = n2;   //nota
+
         Double Acumula = 0.;
         Double Promedio = 0.;
-        Double[] Noten = new Double[5];
-        Double[] Notas = new Double[fila];
-        String[] Alumno = new String[columna];
-        String[] Curso = new String[cantidad];
-        Double[] Notax=new Double[cantidad];
-        String[] NotasAlumno = new String[5];
-        String[] NotasSeleccion = new String[5];
-        String[] NotasMatriz=new String[5];
+        Double[] Noten = new Double[20];
+        String[] Cursen = new String[20];     // variable guarda cursos encontrados
+
+        Double[] Notas = new Double[notax];
+        String[] Alumno = new String[alumnoy];
+        String[] Curso = new String[cursoz];
+
+        Double[] Notax = new Double[notax];
+        String[] NotasAlumno = new String[20];
+        String[] CursoAlumno = new String[20];
+        String[] NotasSeleccion = new String[20];
+        String[] NotasMatriz = new String[20];
 
         String Datos;
-        //System.out.println("el arreglo es "+datos[fila-1]);
+        String[] Datos2 = new String[20];
 
-        String[][][] matriz = new String[cantidad][fila][columna];
+        String[][][] matriz = new String[cursoz][alumnoy][notax];
 
-        //System.out.println("la matrix es "+matriz[fila-1][columna-1]);
-        int n;
-        n = Alumno.length;
-        System.out.println("tamaño matriz " + n);
-        Scanner teclado = new Scanner(System.in);
-        //System.out.println("Ingrese el tamaño del arreglo");
-        //n=teclado.nextInt();
-        //int [] Numeros=new int[n];
+        String Arreglo[] = new String[20];
+        int Fx = 0;
 
-        for (int k = 0; k < cantidad; k++) {
+        for (int k = 0; k < cursoz; k++) {
             System.out.print("Ingrese Curso ");
             Datos = teclado.nextLine();
             Curso[k] = Datos;
-            for (int i = 0; i < Alumno.length; i++) {
+
+            for (int i = 0; i < alumnoy; i++) {
                 System.out.print("Ingrese Nombre ");
                 Datos = teclado.nextLine();
                 Alumno[i] = Datos;
+
                 //System.out.println("Alumno "+Alumno[i]);
-                for (int j = 0; j < Notas.length; j++) {
+                for (int j = 0; j < notax; j++) {
                     System.out.print("Ingrese nota " + (j + 1) + ": ");
                     Datos = teclado.nextLine();
-                    NotasMatriz[j]=Datos;
-                    Notax[j]=Double.parseDouble(Datos);
-                    matriz[k][i][j] = Curso[k] + " " + Alumno[i] + "-" + Datos;
+                    NotasMatriz[j] = Datos;
 
-                    //matriz[i][j]=Datos;
-                    //System.out.println("Notas "+Notas[j]);
-                    //System.out.println("matriz "+matriz[i][j]);
+                    matriz[k][i][j] = Curso[k] + " " + Alumno[i] + " " + NotasMatriz[j];
+                    Arreglo[Fx] = Curso[k] + " " + Alumno[i] + " " + NotasMatriz[j];
+                    Fx++;
                 }
             }
 
         }
-
-        //System.out.println(Arrays.toString(Alumno));
-        for (int k = 0; k < Curso.length; k++) {
-            for (int i = 0; i < Alumno.length; i++) {
-                for (int j = 0; j < Notas.length; j++) {
+        System.out.println("Lista Cursos Ingresado[][][]");
+        for (int k = 0; k < cursoz; k++) {
+            for (int i = 0; i < alumnoy; i++) {
+                for (int j = 0; j < notax; j++) {
                     System.out.println(matriz[k][i][j]);
 
                 }
@@ -80,63 +82,184 @@ public class CursoAlumNota {
             }
 
         }
+        System.out.println("Lista Curso Clon []");
+        for (int i = 0; i < Arreglo.length; i++) {
+            System.out.println(Arreglo[i]);
 
-        boolean encontrado = true;
-        int conta = 0;
-        
-
-        do {
-            int m = 0;
-            System.out.println("Ingrese Nombre busqueda");
-            Datos = teclado.nextLine();
-            for (int k = 0; k < Curso.length; k++) {
-                for (int i = 0; i < Alumno.length; i++) {
-                    for (int j = 0; j < Notas.length; j++) {
-                        if(matriz[k][i][k].contains(Datos)){
-                            NotasAlumno[j]=matriz[k][i][j];
-                        
-                        m++;
-                            //Promedio = Acumula / m;
-                        } else {
-                            System.out.println("Alumno no encontrado");
-
-                        }
-                    }
-                    if (m > 0) {
-                        //System.out.println("Alumno encontrado " + m + " veces");
-                        encontrado = false;
-                    } else {
-                        System.out.println("Volver a intentar");
-                    }
-
-                }
-            }
-
-        } while (encontrado);
-
-        System.out.println("Alumno: " + Datos);
-        for (int i = 0; i < NotasAlumno.length; i++) {
-            System.out.println("Notas: " + NotasAlumno[i]);
         }
-        //Notas[j]=NotasBus[]
-        //Acumula = Acumula + Notas[j];
-        int Tam = NotasAlumno.length;
-        String NotasBus1 = NotasAlumno[0];
-        String NotasBus2 = NotasAlumno[1];
-        String NotasBus3 = NotasAlumno[2];
-        String NotasBus4 = NotasAlumno[3];
-        String NotasBus5 = NotasAlumno[4];
 
-        String[] parts1 = NotasBus1.split("-");
-        String part1 = parts1[1];
-        Noten[0] = Double.parseDouble(part1);
+        System.out.println("INGRESE BUSQUEDA");
+        System.out.println("(1)... Busqueda por Curso");
+        System.out.println("(2)... Busqueda por Alumno");
+        Datos = teclado.nextLine();
+        if (Datos.equals("1")) {
+        }
+        if (Datos.equals("2")) {
+            boolean encontrado = true;
+            int conta = 0;
 
-        String[] parts2 = NotasBus2.split("-");
-        String part2 = parts2[1];
-        Noten[1] = Double.parseDouble(part2);
+            do {
+                int m = 0;
+                System.out.println("Ingrese Nombre busqueda");
+                Datos = teclado.nextLine();
 
-        System.out.println("NotasBus1 " + NotasBus1 + "Nota: " + Noten[0]);
-        System.out.println("NotasBus1 " + NotasBus2 + "Nota: " + Noten[1]);
+                for (int k = 0; k < cursoz; k++) {
+                    for (int i = 0; i < alumnoy; i++) {
+                        for (int j = 0; j < notax; j++) {
+                            if (matriz[k][i][k].contains(Datos)) {
+                                NotasAlumno[j] = matriz[k][i][j];
+                                m++;
+                                conta = m;
+                                while (conta < NotasAlumno.length) {
+
+                                    NotasAlumno[conta] = "***";
+                                    conta++;
+                                }
+                            }
+                        }
+                        //ACA
+                        if (m > 0) {
+                            encontrado = false;
+                        }
+
+                    }
+                }
+            } while (encontrado);
+
+            int na = 0;
+            int zz = 0;
+            String Aste = "***";
+            for (int i = 0; i < NotasAlumno.length; i++) {
+                if (NotasAlumno[i].contains("***")) {
+                    zz++;
+                } else {
+                    na++;
+                }
+
+            }
+            if (na == 1) {
+                String NotasBus1 = NotasAlumno[0];
+
+                String[] parts1 = NotasBus1.split("-");
+                String part1 = parts1[2];
+                Noten[0] = Double.parseDouble(part1);
+
+                System.out.println("Nota: " + Noten[0]);
+                System.out.println("Promedio: " + Noten[0]);
+            }
+            if (na == 2) {
+                String NotasBus1 = NotasAlumno[0];
+                String NotasBus2 = NotasAlumno[1];
+
+                String[] parts1 = NotasBus1.split(" ");
+                String part1 = parts1[2];
+                Noten[0] = Double.parseDouble(part1);
+
+                String[] parts2 = NotasBus2.split(" ");
+                String part2 = parts2[2];
+                Noten[1] = Double.parseDouble(part2);
+
+                Promedio = (Noten[0] + Noten[1]) / na;
+
+                System.out.println("Nota: " + Noten[0]);
+                System.out.println("Nota: " + Noten[1]);
+                System.out.println("El Promedio es: " + Promedio);
+            }
+            if (na == 3) {
+                String NotasBus1 = NotasAlumno[0];
+                String NotasBus2 = NotasAlumno[1];
+                String NotasBus3 = NotasAlumno[2];
+
+                String[] parts1 = NotasBus1.split(" ");
+                String part1 = parts1[2];
+                Noten[0] = Double.parseDouble(part1);
+
+                String[] parts2 = NotasBus2.split(" ");
+                String part2 = parts2[2];
+                Noten[1] = Double.parseDouble(part2);
+
+                String[] parts3 = NotasBus3.split(" ");
+                String part3 = parts3[2];
+                Noten[2] = Double.parseDouble(part3);
+
+                Promedio = (Noten[0] + Noten[1] + Noten[2]) / na;
+
+                System.out.println();
+                System.out.println("Nota: " + Noten[0]);
+                System.out.println("Nota: " + Noten[1]);
+                System.out.println("Nota: " + Noten[2]);
+                System.out.println("El Promedio es: " + Promedio);
+            }
+            if (na == 4) {
+                String NotasBus1 = NotasAlumno[0];
+                String NotasBus2 = NotasAlumno[1];
+                String NotasBus3 = NotasAlumno[2];
+                String NotasBus4 = NotasAlumno[3];
+
+                String[] parts1 = NotasBus1.split(" ");
+                String part1 = parts1[2];
+                Noten[0] = Double.parseDouble(part1);
+
+                String[] parts2 = NotasBus2.split(" ");
+                String part2 = parts2[2];
+                Noten[1] = Double.parseDouble(part2);
+
+                String[] parts3 = NotasBus3.split(" ");
+                String part3 = parts3[2];
+                Noten[2] = Double.parseDouble(part3);
+
+                String[] parts4 = NotasBus4.split(" ");
+                String part4 = parts4[2];
+                Noten[3] = Double.parseDouble(part4);
+
+                Promedio = (Noten[0] + Noten[1] + Noten[2] + Noten[3]) / na;
+
+                System.out.println();
+                System.out.println("Nota: " + Noten[0]);
+                System.out.println("Nota: " + Noten[1]);
+                System.out.println("Nota: " + Noten[2]);
+                System.out.println("Nota: " + Noten[3]);
+                System.out.println("El Promedio es: " + Promedio);
+            }
+            if (na == 5) {
+                String NotasBus1 = NotasAlumno[0];
+                String NotasBus2 = NotasAlumno[1];
+                String NotasBus3 = NotasAlumno[2];
+                String NotasBus4 = NotasAlumno[3];
+                String NotasBus5 = NotasAlumno[4];
+
+                String[] parts1 = NotasBus1.split(" ");
+                String part1 = parts1[2];
+                Noten[0] = Double.parseDouble(part1);
+
+                String[] parts2 = NotasBus2.split(" ");
+                String part2 = parts2[2];
+                Noten[1] = Double.parseDouble(part2);
+
+                String[] parts3 = NotasBus3.split(" ");
+                String part3 = parts3[2];
+                Noten[2] = Double.parseDouble(part3);
+
+                String[] parts4 = NotasBus4.split(" ");
+                String part4 = parts4[2];
+                Noten[3] = Double.parseDouble(part4);
+
+                String[] parts5 = NotasBus5.split(" ");
+                String part5 = parts5[2];
+                Noten[4] = Double.parseDouble(part5);
+
+                Promedio = (Noten[0] + Noten[1] + Noten[2] + Noten[3] + Noten[4]) / na;
+
+                System.out.println();
+                System.out.println("Nota: " + Noten[0]);
+                System.out.println("Nota: " + Noten[1]);
+                System.out.println("Nota: " + Noten[2]);
+                System.out.println("Nota: " + Noten[3]);
+                System.out.println("Nota: " + Noten[4]);
+                System.out.println("El Promedio es: " + Promedio);
+            }
+        }
+
     }
 
 }
