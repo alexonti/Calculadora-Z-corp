@@ -11,9 +11,9 @@ public class Cambioletrasnumero {
 		String auxi;
 		int aux2 = 0;
 		String ent1;
-		System.out.println("deseas ordenar letras o numeros?  (0-1)");
-		System.out.println("0 es para letras");
-		System.out.println("1 para numeros");
+		System.out.println("Deseas ordenar letras o numeros?  (0-1)");
+		System.out.println("Ingresa un 0 para letras");
+		System.out.println("ingresa un 1 para numeros");
 		int preg=sc.nextInt();
 		sc.nextLine();
 		System.out.println("Ingrese la cantidad de elementos a ordenar");
@@ -59,7 +59,7 @@ public class Cambioletrasnumero {
 		    for (int i=0;i<orden.length;i++){
 		    	aux2=orden[i];
 		    	auxi=NumLetra(aux2);
-		    	System.out.println(auxi);
+		    	//System.out.println(auxi);
 		    	letras [i]=auxi;
 		    }
 		    System.out.println(Arrays.toString(letras));
