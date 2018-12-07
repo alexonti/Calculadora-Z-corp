@@ -1,18 +1,43 @@
 package menuterminal;
 import java.util.*;
 import java.math.*;
+import java.io.*;
+import java.net.*;
+
 public class MenuTerminalIf {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("      * * * * * * * * * * * * * * * *");
-        System.out.println("      * **********Z-corp**********  *");
-        System.out.println("      *    Calculadora Zeneniana    *");
-        System.out.println("      * * * * * * * * * * * * * * * * ");
+		
+		String black="\033[30m"; 
+		   String red="\033[38;5;196m"; 
+		   String green="\033[32m"; 
+		   String yellow="\033[38;5;208m"; 
+		   String blue="\033[34m"; 
+		   String purple="\033[35m"; 
+		   String cyan="\033[36m"; 
+		   String white="\033[37m"; 
+		   String bgreen="\u001b[38;5;190m";
+		   String reset="\u001B[0m";
+		   String backbwhite="\u001b[47;1m";
+		   String backbgreen="\u001b[48;5;84m";
+		   String underline="\033[4m";
+		   String framed="\033[51m";
+		   String encircled="\033[4m";
+		   String lightgreen="\u001b[38;5;84m";
+		   String bold="\033[1m";
+		   String purplel="\033[38;5;38m";
+		   String yelli="\033[38;5;229m";
+
+		
+		System.out.println(purplel+"      * * * * * * * * * * * * * * * *");
+        System.out.println(purplel+  "      * * * * *   "+lightgreen+"Z-corp"+purplel+"    * * * * *      "+reset);
+        System.out.println(purplel+ "      *        "+lightgreen+"Calculadora"+purplel+"          *      " +reset);
+        System.out.println(purplel+"      * * * * * * * * * * * * * * * * "+reset);
         System.out.println();
-        System.out.println("              Bienvenido          ");
+        System.out.println("              "+bold+framed+lightgreen+" Bienvenido "+reset+"          ");
         System.out.println();
         System.out.println();
-        System.out.println("Seleccione una de las siguientes opciones \n");
+        System.out.println(yellow+"Seleccione una de las siguientes opciones \n"+reset);
         
         
 		Scanner sn = new Scanner(System.in);
@@ -32,55 +57,61 @@ public class MenuTerminalIf {
  
         while (!salir) {
  
-            System.out.println("1. Operaciones matemáticas");
+            System.out.println(yelli+"1. Operaciones matemáticas");
             System.out.println("2. Operaciones binarias");
             System.out.println("3. Orden de datos");
             System.out.println("4. Promedios");
             System.out.println("5. Acerca");// muestra información acerca de quien realizo el trabajo y email de contacto.
-            System.out.println("6. Salir \n");
+            System.out.println("6. Salir \n"+reset);
             
             
  
             try {
             	
-                System.out.println("Ingrese una opción \n");
+                System.out.println(encircled+yellow+"Ingrese una opción:\n"+reset);
                 opcion = sn.nextInt();
-                
+                System.out.println();
  //menu general de la calculadora
                 
                 switch (opcion) {
                     case 1:
-                        System.out.println("Has seleccionado Operaciones matemáticas \n");
+                        System.out.println(purplel+"Has seleccionado Operaciones matemáticas \n"+reset);
                         break;
                     case 2:
-                        System.out.println("Has seleccionado Operaciones binarias \n");
+                        System.out.println(purplel+"Has seleccionado Operaciones binarias \n"+reset);
                         break;
                     case 3:
-                        System.out.println("Has seleccionado Orden de datos \n");
+                        System.out.println(purplel+"Has seleccionado Orden de datos \n"+reset);
                         break;
                     case 4:
-                        System.out.println("Has seleccionado Promedios \n");
+                        System.out.println(purplel+"Has seleccionado Promedios \n"+reset);
                         break;
                     case 5:
-                        System.out.println("Has seleccionado Acerca \n");
+                    	if(opcion==5)
+                        System.out.println(purplel+"Has seleccionado Acerca \n"+reset);
                         System.out.println();
+                        
+                        
+        	        	regresar = true; //opción que nos devuelve al menu anterior
+        	            
+        	          
                         break;
                     case 6:
                     	
                     	     
-                    	System.out.println("\n ******    Programa terminado    ******");
+                    	System.out.println(yellow+"\n ******    Programa terminado    ******"+reset);
                     	            	
                         salir = true;
                         System.exit(opcion); //Termina el programa
                         break;
                     default:
-                        System.out.println("\nSeleccione una opción entre 1 y 6 \n");
+                        System.out.println(red+"\nSeleccione una opción entre 1 y 6 \n"+reset);
                        
                 } //switch menu principal
                 	} //try menu principal
                
              catch (InputMismatchException e) {
-                System.out.println("Debes insertar un número");
+                System.out.println(cyan+"* * * Debes insertar un número* * * \n"+reset);
                 sn.next();
                 
             } // catch menu principal
@@ -211,8 +242,8 @@ public class MenuTerminalIf {
             	            double y2 = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
             	            int i2=0;
             	            int j2=0;
-            	            double xMult;
-            	            double yMult;
+            	            double xMult = 0;
+            	            double yMult = 0;
             	            double res1;
             	            double res2;
             	            
@@ -289,9 +320,7 @@ public class MenuTerminalIf {
             	System.out.println("1. Suma binaria");
                 System.out.println("2. Suma hexadecimal");
                 System.out.println("3. Cambio de base");
-                System.out.println("4. Decimal - Binario");
-                System.out.println("5. Decimal - Hexadecimal");
-                System.out.println("6. Regresar");
+                System.out.println("4. Regresar");
          
                 try {
                 	
@@ -349,9 +378,9 @@ public class MenuTerminalIf {
                     				String respuesta=Decbin(resp,2);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("*****************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*****************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -365,9 +394,9 @@ public class MenuTerminalIf {
                     				int respuesta=AlfaDec(valor5,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("******************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("******************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -381,9 +410,9 @@ public class MenuTerminalIf {
                     				int respuesta=DecTodas(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("*******************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*******************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -397,9 +426,9 @@ public class MenuTerminalIf {
                     				String respuesta=decalfa(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -410,9 +439,9 @@ public class MenuTerminalIf {
                     				break;
                     			}else{System.out.println();
                 	            System.out.println();
-                	            System.out.println("******************************");
-                	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
-                	            System.out.println("******************************");
+                	            System.out.println("************************************************");
+                	            System.out.println("            La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                	            System.out.println("************************************************");
                 	            System.out.println();}
                     		}
                     		if(x5==10){
@@ -420,9 +449,9 @@ public class MenuTerminalIf {
                     				String respuesta=Decbin(num5,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -439,9 +468,9 @@ public class MenuTerminalIf {
                     				int respuesta=DecTodas(num5,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -454,9 +483,9 @@ public class MenuTerminalIf {
                     				String respuesta=decalfa(num5,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("*********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -469,9 +498,9 @@ public class MenuTerminalIf {
                     			else{
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
-                    	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*********************************************");
+                    	            System.out.println("          La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("*********************************************");
                     	            System.out.println();}
                     			
                     		}if (x5<10 && x5>2){
@@ -480,9 +509,9 @@ public class MenuTerminalIf {
                     				String respuesta=Decbin(res,2);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("*********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -496,9 +525,9 @@ public class MenuTerminalIf {
                     				int respuesta=TodoDec(num5,x5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("***********************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("***********************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -513,9 +542,9 @@ public class MenuTerminalIf {
                     				int respuesta=DecTodas(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -529,9 +558,9 @@ public class MenuTerminalIf {
                     				String respuesta=decalfa(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -543,9 +572,9 @@ public class MenuTerminalIf {
                     			}
                     			else{System.out.println();
                 	            System.out.println();
-                	            System.out.println("******************************");
-                	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
-                	            System.out.println("******************************");
+                	            System.out.println("****************************************************");
+                	            System.out.println("             La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                	            System.out.println("****************************************************");
                 	            System.out.println();
                 	            }
                     		}
@@ -558,9 +587,9 @@ public class MenuTerminalIf {
                     			int respuesta=Bindec(num5,2);
                     			System.out.println();
                 	            System.out.println();
-                	            System.out.println("******************************");
+                	            System.out.println("****************************************************");
                 	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                	            System.out.println("******************************");
+                	            System.out.println("****************************************************");
                 	            System.out.println();
                 	            System.out.println();
                 	            System.out.println();
@@ -574,9 +603,9 @@ public class MenuTerminalIf {
                     				int respuesta=DecTodas(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -591,9 +620,9 @@ public class MenuTerminalIf {
                     				String respuesta=decalfa(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -608,9 +637,9 @@ public class MenuTerminalIf {
                     				String respuesta=Decbin(resp,2);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -624,9 +653,9 @@ public class MenuTerminalIf {
                     				int respuesta=AlfaDec(valor5,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -641,9 +670,9 @@ public class MenuTerminalIf {
                     				int respuesta=DecTodas(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -657,9 +686,9 @@ public class MenuTerminalIf {
                     				String respuesta=decalfa(res,y5);
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println("      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("**************************************************");
                     	            System.out.println();
                     	            System.out.println();
                     	            System.out.println();
@@ -672,20 +701,15 @@ public class MenuTerminalIf {
                     			else{
                     				System.out.println();
                     	            System.out.println();
-                    	            System.out.println("******************************");
-                    	            System.out.println("La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
-                    	            System.out.println("******************************");
+                    	            System.out.println("*******************************************************");
+                    	            System.out.println("           La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+                    	            System.out.println("*******************************************************");
                     	            System.out.println();
                     			
                             break;}}
                             
+                        
                         case 4:
-                            System.out.println("Has seleccionado Decimal - binario \n");
-                            break;
-                        case 5:
-                            System.out.println("Has seleccionado Decimal - hexadecimal \n");
-                            break;
-                        case 6:
                         	System.out.println("\n Ingrese una opción \n");
                             regresar = true;
                             break;
@@ -710,9 +734,9 @@ public class MenuTerminalIf {
             	System.out.println("Seleccione una opción");
             	System.out.println();
             	
-            	System.out.println("1. Aleatorio");
-                System.out.println("2. Personalizado");
-                System.out.println("3. Regresar");
+            	System.out.println("1. Continuar");
+                System.out.println("2. Regresar \n");
+               
                 
          
                 try {
@@ -721,13 +745,117 @@ public class MenuTerminalIf {
                     opcion3 = sn.nextInt();
                     switch (opcion3) {
                         case 1:
-                            System.out.println("Has seleccionado Orden Aleatorio \n");
+                            System.out.println();
+                       
+                        		Scanner sc=new Scanner (System.in);
+                        		int con = 0;
+                        		int a = 0;
+                        		String auxi;
+                        		int aux2 = 0;
+                        		String ent1;
+                        		System.out.println("¿Qué tipo de datos deseas ordenar? \n");
+                        		System.out.println("0 - Letras");
+                        		System.out.println("1 - Números \n");
+                        		int preg=sc.nextInt();
+                        		sc.nextLine();
+                        		System.out.println("Ingrese la cantidad de elementos a ordenar \n");
+                        		int sec=sc.nextInt();
+                        		sc.nextLine();
+                        		System.out.println();
+                        		if (preg==0){
+                        			System.out.println("Ingrese letras a ordenar \n");
+                        			int orden[]=new int[sec];
+                        			String letras[]=new String [sec];
+                        		    while(con<sec){
+                        		       ent1=sc.nextLine();
+                        		      // if(ent1=="-1"){
+                        			   //   System.out.println("Usted a dejado de ingresar datos");
+                        			     // con=-1;
+                        		     //  }else{
+                        		          try{
+                        		        	  a=Integer.parseInt(ent1);
+                        		        	  System.out.println("Ingresa letras \n");
+                        		        	  }
+                        		          catch (NumberFormatException ex){
+                        			      String aux=ent1.toUpperCase();
+                        			      //System.out.println(aux);
+                        			      a=Valorletra(aux);
+                        //System.out.println(con+"--0");
+                        			      orden[con]=a;
+                        			        con++;
+                        		          }
+                        		        
+                        		      // }
+                        		   }
+                        		    for (int i = 0; i < orden.length; i++) {
+                        	            for (int j = 1; j < (orden.length); j++) {
+                        	                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                        	                    aux2 = orden[j - 1];
+                        	                    
+                        	                    orden[j - 1] = orden[j];
+                        	                    
+                        	                    orden[j] = aux2; 
+                        	                    
+                        	            }
+                        	        }
+                        	    }
+                        		    for (int i=0;i<orden.length;i++){
+                        		    	aux2=orden[i];
+                        		    	auxi=NumLetra(aux2);
+                        		    	System.out.println(auxi);
+                        		    	letras [i]=auxi;
+                        		    }
+                        		    System.out.println();
+                      			  	System.out.println("El orden de los datos ingresados es: ");
+                      			  	System.out.println();
+                        		    System.out.println(Arrays.toString(letras));
+                        		    System.out.println();
+                        		    System.out.println("Ingrese una opción: \n");
+                        		   
+                        		}else{
+                        			int orden[]=new int[sec];
+                        			System.out.println("Ingrese los números a ordenar \n");
+                        			  while(con<sec){
+                        			       ent1=sc.nextLine();
+                        			       //if(ent1=="-1"){
+                        				     // System.out.println("Usted a dejado de ingresar datos");
+                        				     // con=-1;
+                        			  //     }
+                        			 // else{
+                        			          try{a=Integer.parseInt(ent1);}
+                        			          catch (NumberFormatException ex){
+                        			        	  System.out.println("Favor de ingresar solo datos numéricos \n");
+                        				      //String aux=ent1.toUpperCase();
+                        				     // a=Valorletra(ent1);	  
+                        			              }
+                        			        orden[con]=a;
+                        			        con++;
+                        			     //  }
+                        			   }
+                        			  for (int i = 0; i < orden.length; i++) {
+                        		            for (int j = 1; j < (orden.length); j++) {
+                        		                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                        		                    aux2 = orden[j - 1];
+                        		                    
+                        		                    orden[j - 1] = orden[j];
+                        		                    
+                        		                    orden[j] = aux2; 
+                        		                    
+                        		            }
+                        		        }
+                        		    }
+                        			  System.out.println();
+                        			  System.out.println("El orden de los datos ingresados es: ");
+                        			  System.out.println();
+                        			  System.out.println(Arrays.toString(orden));
+                        			  System.out.println();
+                        			  System.out.println("Ingrese una opción: \n");
                             break;
-                        case 2:
-                            System.out.println("Has seleccionado Orden Personalizado \n");
-                            break;
+                            }
+                            
+                       
                         
-                        case 3:
+                        case 2:
                             regresar = true;
                             break;
                         default:
@@ -780,14 +908,17 @@ public class MenuTerminalIf {
             } // if menu ponderado
             
             if(opcion==5) {
-            	System.out.println("* * * * * * * * * * * * * * * * * * * * * *");
-            	System.out.println("*      ******************************     *");
-                System.out.println("*      *        ***Z-corp***        *     *");
-                System.out.println("*      *    Calculadora Zeneniana   *     *");
+            	System.out.println(lightgreen+"* * * * * * * * * * * * * * * * * * * * * *");
+            	System.out.println(lightgreen+"*      ******************************     *");
+                System.out.println(lightgreen+"*      *        ***Z-corp***        *     *");
+                System.out.println(lightgreen+"*      *    Calculadora Zeneniana   *     *");
                 System.out.println("*      ******************************     *");
                 System.out.println("*                                         *");
                 System.out.println("*            Creada y diseñada            *");
                 System.out.println("*            By Hijos de Zenen            *");
+                System.out.println("*                                         *");
+                System.out.println("*              Inspirada por              *");
+                System.out.println("*                  Zenen                  *");
                 System.out.println("*           *******************           *");
                 System.out.println("*                                         *");
                 System.out.println("*             Víctor Barraza              *");
@@ -809,8 +940,10 @@ public class MenuTerminalIf {
                 System.out.println("*              ***Es ley***               *");
                 System.out.println("*                                         *");
                 System.out.println("* * * * * * * * * * * * * * * * * * * * * *");
-
+                regresar = true;
+                System.out.println(yellow+"\n ******    Programa terminado    ******"+reset);
                 break;
+                
                 
                 
        
@@ -938,7 +1071,7 @@ return diferencia;
 	
 	
 	public static double Multiplicar1(double x2, double y2){   
-        double aux = x,auy=y;
+        double aux = x2,auy=y2;
  	for(int i=0;i<9;i++){//x*10
      	x2=x2+aux;
      }
@@ -1170,5 +1303,130 @@ static String decalfa(int ini5,int abase5){
 		cont5--;
 	}
 	return acu5;
+}
+	public static int Valorletra(String aux){
+		int val = 0;
+		switch (aux){
+		case "A":val=1;
+		break;
+		case "B":val=2;
+		break;
+		case"C":val=3;
+		break;
+		case"D":val=4;
+		break;
+		case"E":val=5;
+		break;
+		case"F":val=6;
+		break;
+		case"G":val=7;
+		break;
+		case"H":val=8;
+		break;
+		case"I":val=9;
+		break;
+		case"J":val=10;
+		break;
+		case"K":val=11;
+		break;
+		case "L":val=12;
+		break;
+		case"M": val=13;
+		break;
+		case "N":val=14;
+		break;
+		case "Ñ":val=15;
+		break;
+		case "O":val=16;
+		break;
+		case"P":val=17;
+		break;
+		case"Q": val=18;
+		break;
+		case"R":val=19;
+		break;
+		case"S":val=20;
+		break;
+		case"T":val=21;
+		break;
+		case"U":val=22;
+		break;
+		case"V":val=23;
+		break;
+		case"W":val=24;
+		break;
+		case"X":val=25;
+		break;
+		case"Y":val=26;
+		break;
+		case"Z":val=27;
+		break;
+		default:System.out.println("no existe"); 
+		break;
+		}
+		return val;
+	}
+	public static String NumLetra(int val){
+		String aux = null;
+		switch (val){
+		case 1:aux="A";
+		break;
+		case 2:aux="B";
+		break;
+		case 3:aux="C";
+		break;
+		case 4:aux="D";
+		break;
+		case 5:aux="E";
+		break;
+		case 6:aux="F";
+		break;
+		case 7:aux="G";
+		break;
+		case 8:aux="H";
+		break;
+		case 9:aux="I";
+		break;
+		case 10:aux="J";
+		break;
+		case 11:aux="K"; 
+		break;
+		case 12:aux="L";
+		break;
+		case 13:aux="M";
+		break;
+		case 14:aux="N";
+		break;
+		case 15:aux="Ñ";
+		break;
+		case 16:aux="O";
+		break;
+		case 17:aux="P";
+		break;
+		case 18:aux="Q";
+		break;
+		case 19:aux="R";
+		break;
+		case 20:aux="S";
+		break;
+		case 21:aux="T";
+		break;
+		case 22:aux="U";
+		break;
+		case 23:aux="V";
+		break;
+		case 24:aux="W";
+		break;
+		case 25:aux="X";
+		break;
+		case 26:aux="Y";
+		break;
+		case 27:aux="Z";
+		break;
+		default:System.out.println("no existe");
+		break;
+		}
+		return aux;
+	
 }
 }// class
