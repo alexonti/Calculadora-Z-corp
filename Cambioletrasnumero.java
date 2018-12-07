@@ -4,36 +4,64 @@ import java.util.Scanner;
 public class Cambioletrasnumero {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner sc=new Scanner (System.in);
-		int con = 0;
+		int con = 2;
 		int a = 0;
 		String auxi;
 		int aux2 = 0;
+		int preg=0;
+		int preg2=0;
 		String ent1;
+		int sec = 0;
 		System.out.println("Deseas ordenar letras o numeros?");
 		System.out.println("Ingresa un 0 para letras");
 		System.out.println("ingresa un 1 para numeros");
-		int preg=sc.nextInt();
-		sc.nextLine();
+		while(con>1){
+		 auxi=sc.nextLine();
+		 //sc.nextLine();
+		 try{preg=Integer.parseInt(auxi);}
+		 catch(NumberFormatException ex){
+			 System.out.println("Por favor ingrese un dato valido");
+			 con=3;
+			 continue;
+		 }
+		 
+		if(preg==0 ||preg ==1){
+			preg2=preg;
+			con=0;
+		}else{
+			con=2;
+			System.out.println("Por favor ingresa un dato valido");}
+		}
+		con=3;
 		System.out.println("Ingrese la cantidad de elementos(Numeros) a ordenar ");
-		int sec=sc.nextInt();
-		sc.nextLine();
+		while(con>1){
+		auxi=sc.nextLine();
+		try{sec=Integer.parseInt(auxi);
+		con=0;}
+		catch(NumberFormatException ex){
+			System.out.println("Por favor ingrese un dato valido");
+			 con=3;
+			 continue;
+		}
+		//sc.nextLine();
+		}
 		System.out.println("¿Como deseas ordenar los datos?");
-		System.out.println("Ingresa 0 para ordenar de menor a mayor");
-		System.out.println("Ingresa 1 para ordenar de mayor a menor");
+		System.out.println("Ingresa 0 para ordenar de forma ascendente");
+		System.out.println("Ingresa 1 para ordenar de forma descendente");
 		int op2 = 0;
 		int respues=3;
 		while (op2>=0){
 			int exp = 0;
 		   String mame=sc.nextLine();
-		  // sc.skip("\n");
+		
 		   try{ exp=Integer.parseInt(mame); }
 		   catch (NumberFormatException ex){
 			   System.out.println("Por favor no ingreses letras");
 			   op2++;
 			   continue;
-			 //  System.out.println("No letras");
+		
 		   }
 		   if (exp==0 || exp==1){
 			   op2=-1;
@@ -41,14 +69,15 @@ public class Cambioletrasnumero {
 		   }else{System.out.println("Por favor ingresa un 0 o un 1 solamente");}
 		}
 		if(respues==0){    //menor a mayor
-		   if (preg==0){              //ordena letras
+		   if (preg2==0){              //ordena letras
 			System.out.println("Ingrese letras a ordenar");
+			System.out.println("Cada letra debe ir por separado");
 			int orden[]=new int[sec];
 			String letras[]=new String [sec];
 		    while(con<sec){
 		       ent1=sc.nextLine();
 		      // if(ent1=="-1"){
-			   //   System.out.println("Usted a dejado de ingresar datos");
+			  
 			     // con=-1;
 		     //  }else{
 		          try{
@@ -57,9 +86,9 @@ public class Cambioletrasnumero {
 		        	  }
 		          catch (NumberFormatException ex){
 			      String aux=ent1.toUpperCase();
-			      //System.out.println(aux);
+			 
 			      a=Valorletra(aux);
-//System.out.println(con+"--0");
+
 			      orden[con]=a;
 			        con++;
 		          }
@@ -81,18 +110,19 @@ public class Cambioletrasnumero {
 		    for (int i=0;i<orden.length;i++){
 		    	aux2=orden[i];
 		    	auxi=NumLetra(aux2);
-		    	//System.out.println(auxi);
+		    	
 		    	letras [i]=auxi;
 		    }
-		    System.out.println("Ordenados de menor a mayor es");
+		    System.out.println("Ordenados de forma ascendente es");
 		    System.out.println(Arrays.toString(letras));
 		}else{   //ordena numeros
 			int orden[]=new int[sec];
 			System.out.println("ingrese los numeros a ordenar");
+			System.out.println("Condira que las palabras seran consideradas 0");
 			  while(con<sec){
 			       ent1=sc.nextLine();
 			       //if(ent1=="-1"){
-				     // System.out.println("Usted a dejado de ingresar datos");
+				    
 				     // con=-1;
 			  //     }
 			 // else{
@@ -117,20 +147,21 @@ public class Cambioletrasnumero {
 		                    
 		            }
 		        }
-		    }System.out.println("Ordenados de menor a mayor es");
+		    }System.out.println("Ordenados de forma ascendente es");
 			  System.out.println(Arrays.toString(orden));
 		}
 		}
 		else{              //mayor a menor
 			
-			 if (preg==0){ 
+			 if (preg2==0){ 
 			System.out.println("Ingrese letras a ordenar");       //letras
+			System.out.println("Cada letra debe ir por separado");
 			int orden[]=new int[sec];
 			String letras[]=new String [sec];
 		    while(con<sec){
 		       ent1=sc.nextLine();
 		      // if(ent1=="-1"){
-			   //   System.out.println("Usted a dejado de ingresar datos");
+			  
 			     // con=-1;
 		     //  }else{
 		          try{
@@ -141,7 +172,7 @@ public class Cambioletrasnumero {
 			      String aux=ent1.toUpperCase();
 			      //System.out.println(aux);
 			      a=Valorletra(aux);
-//System.out.println(con+"--0");
+
 			      orden[con]=a;
 			        con++;
 		          }
@@ -163,18 +194,19 @@ public class Cambioletrasnumero {
 		    for (int i=0;i<orden.length;i++){
 		    	aux2=orden[i];
 		    	auxi=NumLetra(aux2);
-		    	//System.out.println(auxi);
+		    	
 		    	letras [i]=auxi;
-		    }System.out.println("Ordenados de mayor a menor es");
+		    }System.out.println("Ordenados de forma descendente es");
 		    System.out.println(Arrays.toString(letras));
 		}
 		else{                    //numeros
 			int orden[]=new int[sec];
 			System.out.println("ingrese los numeros a ordenar");
+			System.out.println("Condira que las palabras seran consideradas 0");
 			  while(con<sec){
 			       ent1=sc.nextLine();
 			       //if(ent1=="-1"){
-				     // System.out.println("Usted a dejado de ingresar datos");
+				     
 				     // con=-1;
 			  //     }
 			 // else{
@@ -199,7 +231,7 @@ public class Cambioletrasnumero {
 		                    
 		            }
 		        }
-		    }System.out.println("Ordenados de mayor a menor es");
+		    }System.out.println("Ordenados de forma descendente es");
 			  System.out.println(Arrays.toString(orden));
 		}
 		}
