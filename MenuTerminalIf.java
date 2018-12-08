@@ -745,113 +745,237 @@ public class MenuTerminalIf {
                     opcion3 = sn.nextInt();
                     switch (opcion3) {
                         case 1:
-                            System.out.println();
-                       
-                        		Scanner sc=new Scanner (System.in);
-                        		int con = 0;
-                        		int a = 0;
-                        		String auxi;
-                        		int aux2 = 0;
-                        		String ent1;
-                        		System.out.println("¿Qué tipo de datos deseas ordenar? \n");
-                        		System.out.println("0 - Letras");
-                        		System.out.println("1 - Números \n");
-                        		int preg=sc.nextInt();
-                        		sc.nextLine();
-                        		System.out.println("Ingrese la cantidad de elementos a ordenar \n");
-                        		int sec=sc.nextInt();
-                        		sc.nextLine();
-                        		System.out.println();
-                        		if (preg==0){
-                        			System.out.println("Ingrese letras a ordenar \n");
-                        			int orden[]=new int[sec];
-                        			String letras[]=new String [sec];
-                        		    while(con<sec){
-                        		       ent1=sc.nextLine();
-                        		      // if(ent1=="-1"){
-                        			   //   System.out.println("Usted a dejado de ingresar datos");
-                        			     // con=-1;
-                        		     //  }else{
-                        		          try{
-                        		        	  a=Integer.parseInt(ent1);
-                        		        	  System.out.println("Ingresa letras \n");
-                        		        	  }
-                        		          catch (NumberFormatException ex){
-                        			      String aux=ent1.toUpperCase();
-                        			      //System.out.println(aux);
-                        			      a=Valorletra(aux);
-                        //System.out.println(con+"--0");
-                        			      orden[con]=a;
-                        			        con++;
-                        		          }
-                        		        
-                        		      // }
-                        		   }
-                        		    for (int i = 0; i < orden.length; i++) {
-                        	            for (int j = 1; j < (orden.length); j++) {
-                        	                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
-                        	                    aux2 = orden[j - 1];
-                        	                    
-                        	                    orden[j - 1] = orden[j];
-                        	                    
-                        	                    orden[j] = aux2; 
-                        	                    
-                        	            }
-                        	        }
-                        	    }
-                        		    for (int i=0;i<orden.length;i++){
-                        		    	aux2=orden[i];
-                        		    	auxi=NumLetra(aux2);
-                        		    	System.out.println(auxi);
-                        		    	letras [i]=auxi;
-                        		    }
-                        		    System.out.println();
-                      			  	System.out.println("El orden de los datos ingresados es: ");
-                      			  	System.out.println();
-                        		    System.out.println(Arrays.toString(letras));
-                        		    System.out.println();
-                        		    System.out.println("Ingrese una opción: \n");
-                        		   
-                        		}else{
-                        			int orden[]=new int[sec];
-                        			System.out.println("Ingrese los números a ordenar \n");
-                        			  while(con<sec){
-                        			       ent1=sc.nextLine();
-                        			       //if(ent1=="-1"){
-                        				     // System.out.println("Usted a dejado de ingresar datos");
-                        				     // con=-1;
-                        			  //     }
-                        			 // else{
-                        			          try{a=Integer.parseInt(ent1);}
-                        			          catch (NumberFormatException ex){
-                        			        	  System.out.println("Favor de ingresar solo datos numéricos \n");
-                        				      //String aux=ent1.toUpperCase();
-                        				     // a=Valorletra(ent1);	  
-                        			              }
-                        			        orden[con]=a;
-                        			        con++;
-                        			     //  }
-                        			   }
-                        			  for (int i = 0; i < orden.length; i++) {
-                        		            for (int j = 1; j < (orden.length); j++) {
-                        		                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
-                        		                    aux2 = orden[j - 1];
-                        		                    
-                        		                    orden[j - 1] = orden[j];
-                        		                    
-                        		                    orden[j] = aux2; 
-                        		                    
-                        		            }
-                        		        }
-                        		    }
-                        			  System.out.println();
-                        			  System.out.println("El orden de los datos ingresados es: ");
-                        			  System.out.println();
-                        			  System.out.println(Arrays.toString(orden));
-                        			  System.out.println();
-                        			  System.out.println("Ingrese una opción: \n");
+                        	Scanner sc=new Scanner (System.in);
+                    		int con = 2;
+                    		int a = 0;
+                    		String auxi;
+                    		int aux2 = 0;
+                    		int preg=0;
+                    		int preg2=0;
+                    		String ent1;
+                    		int sec = 0;
+                    		System.out.println("Deseas ordenar letras o numeros?");
+                    		System.out.println("Ingresa un 0 para letras");
+                    		System.out.println("ingresa un 1 para numeros");
+                    		while(con>1){
+                    		 auxi=sc.nextLine();
+                    		 //sc.nextLine();
+                    		 try{preg=Integer.parseInt(auxi);}
+                    		 catch(NumberFormatException ex){
+                    			 System.out.println("Por favor ingrese un dato valido");
+                    			 con=3;
+                    			 continue;
+                    		 }
+                    		 
+                    		if(preg==0 ||preg ==1){
+                    			preg2=preg;
+                    			con=0;
+                    		}else{
+                    			con=2;
+                    			System.out.println("Por favor ingresa un dato valido");}
+                    		}
+                    		con=3;
+                    		System.out.println("Ingrese la cantidad de elementos(Numeros) a ordenar ");
+                    		while(con>1){
+                    		auxi=sc.nextLine();
+                    		try{sec=Integer.parseInt(auxi);
+                    		con=0;}
+                    		catch(NumberFormatException ex){
+                    			System.out.println("Por favor ingrese un dato valido");
+                    			 con=3;
+                    			 continue;
+                    		}
+                    		//sc.nextLine();
+                    		}
+                    		System.out.println("¿Como deseas ordenar los datos?");
+                    		System.out.println("Ingresa 0 para ordenar de forma ascendente");
+                    		System.out.println("Ingresa 1 para ordenar de forma descendente");
+                    		int op2 = 0;
+                    		int respues=3;
+                    		while (op2>=0){
+                    			int exp = 0;
+                    		   String mame=sc.nextLine();
+                    		
+                    		   try{ exp=Integer.parseInt(mame); }
+                    		   catch (NumberFormatException ex){
+                    			   System.out.println("Por favor no ingreses letras");
+                    			   op2++;
+                    			   continue;
+                    		
+                    		   }
+                    		   if (exp==0 || exp==1){
+                    			   op2=-1;
+                    			   respues=exp;
+                    		   }else{System.out.println("Por favor ingresa un 0 o un 1 solamente");}
+                    		}
+                    		if(respues==0){    //menor a mayor
+                    		   if (preg2==0){              //ordena letras
+                    			System.out.println("Ingrese letras a ordenar");
+                    			System.out.println("Cada letra debe ir por separado");
+                    			int orden[]=new int[sec];
+                    			String letras[]=new String [sec];
+                    		    while(con<sec){
+                    		       ent1=sc.nextLine();
+                    		      // if(ent1=="-1"){
+                    			  
+                    			     // con=-1;
+                    		     //  }else{
+                    		          try{
+                    		        	  a=Integer.parseInt(ent1);
+                    		        	  System.out.println("Ingresa letras");
+                    		        	  }
+                    		          catch (NumberFormatException ex){
+                    			      String aux=ent1.toUpperCase();
+                    			 
+                    			      a=Valorletra(aux);
+
+                    			      orden[con]=a;
+                    			        con++;
+                    		          }
+                    		        
+                    		      // }
+                    		   }
+                    		    for (int i = 0; i < orden.length; i++) {
+                    	            for (int j = 1; j < (orden.length); j++) {
+                    	                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                    	                    aux2 = orden[j - 1];
+                    	                    
+                    	                    orden[j - 1] = orden[j];
+                    	                    
+                    	                    orden[j] = aux2; 
+                    	                    
+                    	            }
+                    	        }
+                    	    }
+                    		    for (int i=0;i<orden.length;i++){
+                    		    	aux2=orden[i];
+                    		    	auxi=NumLetra(aux2);
+                    		    	
+                    		    	letras [i]=auxi;
+                    		    }
+                    		    System.out.println("Ordenados de forma ascendente es");
+                    		    System.out.println(Arrays.toString(letras));
+                    		}else{   //ordena numeros
+                    			int orden[]=new int[sec];
+                    			System.out.println("ingrese los numeros a ordenar");
+                    			System.out.println("Condira que las palabras seran consideradas 0");
+                    			  while(con<sec){
+                    			       ent1=sc.nextLine();
+                    			       //if(ent1=="-1"){
+                    				    
+                    				     // con=-1;
+                    			  //     }
+                    			 // else{
+                    			          try{a=Integer.parseInt(ent1);}
+                    			          catch (NumberFormatException ex){
+                    			        	  System.out.println("Favor de ingresar datos numericos");
+                    				      //String aux=ent1.toUpperCase();
+                    				     // a=Valorletra(ent1);	  
+                    			              }
+                    			        orden[con]=a;
+                    			        con++;
+                    			     //  }
+                    			   }
+                    			  for (int i = 0; i < orden.length; i++) {
+                    		            for (int j = 1; j < (orden.length); j++) {
+                    		                if (orden[j] < orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                    		                    aux2 = orden[j - 1];
+                    		                    
+                    		                    orden[j - 1] = orden[j];
+                    		                    
+                    		                    orden[j] = aux2; 
+                    		                    
+                    		            }
+                    		        }
+                    		    }System.out.println("Ordenados de forma ascendente es");
+                    			  System.out.println(Arrays.toString(orden));
+                    		}
+                    		}
+                    		else{              //mayor a menor
+                    			
+                    			 if (preg2==0){ 
+                    			System.out.println("Ingrese letras a ordenar");       //letras
+                    			System.out.println("Cada letra debe ir por separado");
+                    			int orden[]=new int[sec];
+                    			String letras[]=new String [sec];
+                    		    while(con<sec){
+                    		       ent1=sc.nextLine();
+                    		      // if(ent1=="-1"){
+                    			  
+                    			     // con=-1;
+                    		     //  }else{
+                    		          try{
+                    		        	  a=Integer.parseInt(ent1);
+                    		        	  System.out.println("Ingresa letras");
+                    		        	  }
+                    		          catch (NumberFormatException ex){
+                    			      String aux=ent1.toUpperCase();
+                    			      //System.out.println(aux);
+                    			      a=Valorletra(aux);
+
+                    			      orden[con]=a;
+                    			        con++;
+                    		          }
+                    		        
+                    		      // }
+                    		   }
+                    		    for (int i = 0; i < orden.length; i++) {
+                    	            for (int j = 1; j < (orden.length); j++) {
+                    	                if (orden[j] > orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                    	                    aux2 = orden[j - 1];
+                    	                    
+                    	                    orden[j - 1] = orden[j];
+                    	                    
+                    	                    orden[j] = aux2; 
+                    	                    
+                    	            }
+                    	        }
+                    	    }
+                    		    for (int i=0;i<orden.length;i++){
+                    		    	aux2=orden[i];
+                    		    	auxi=NumLetra(aux2);
+                    		    	
+                    		    	letras [i]=auxi;
+                    		    }System.out.println("Ordenados de forma descendente es");
+                    		    System.out.println(Arrays.toString(letras));
+                    		}
+                    		else{                    //numeros
+                    			int orden[]=new int[sec];
+                    			System.out.println("ingrese los numeros a ordenar");
+                    			System.out.println("Condira que las palabras seran consideradas 0");
+                    			  while(con<sec){
+                    			       ent1=sc.nextLine();
+                    			       //if(ent1=="-1"){
+                    				     
+                    				     // con=-1;
+                    			  //     }
+                    			 // else{
+                    			          try{a=Integer.parseInt(ent1);}
+                    			          catch (NumberFormatException ex){
+                    			        	  System.out.println("Favor de ingresar datos numericos");
+                    				      //String aux=ent1.toUpperCase();
+                    				     // a=Valorletra(ent1);	  
+                    			              }
+                    			        orden[con]=a;
+                    			        con++;
+                    			     //  }
+                    			   }
+                    			  for (int i = 0; i < orden.length; i++) {
+                    		            for (int j = 1; j < (orden.length); j++) {
+                    		                if (orden[j] > orden[j - 1]) {  // el kernel si cambias el simbolo de mayor a menor cambia resultado a ascendete o descente.
+                    		                    aux2 = orden[j - 1];
+                    		                    
+                    		                    orden[j - 1] = orden[j];
+                    		                    
+                    		                    orden[j] = aux2; 
+                    		                    
+                    		            }
+                    		        }
+                    		    }System.out.println("Ordenados de forma descendente es");
+                    System.out.println(Arrays.toString(orden));
                             break;
                             }
+                    		}
                             
                        
                         
