@@ -1,0 +1,489 @@
+package promediozcorp;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+/**
+ *
+ * @author BRENDA
+ */
+public class PromedioZCorp {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner teclado = new Scanner(System.in);
+        String nn = null;                   // variable string para guardar cantidad de cursos
+        String nn1 = null;                  // variable string para guardar cantidad de alumnos
+        String nn2 = null;                  // variable string para guardar cantidad de notas
+        int n = 0;
+        int n1 = 0;
+        int n2 = 0;
+        
+        System.out.print("*************************************************************\n"
+                + "******************INGRESE LO SOLICITADO**********************\n"
+                + "*************************************************************\n");
+
+        System.out.print("Cantidad de Cursos\t: ");
+        nn = validarCursoalumnota(nn);                  // se valida cantidad de cursos, con funcion de validacion, se aceptan numeros mayores a 0
+        n = Integer.parseInt(nn);
+        System.out.print("Cantidad de Alumnos\t: ");
+        nn1 = validarCursoalumnota(nn1);                // se valida cantidad de alumnos, con funcion de validacion, se aceptan numeros mayores a 0
+        n1 = Integer.parseInt(nn1);
+        System.out.print("Cantidad de Notas\t: ");      
+        nn2 = validarCursoalumnota(nn2);                // se valida cantidad de notas, con funcion de validacion, se aceptan numeros mayores a 0
+        n2 = Integer.parseInt(nn2);
+
+        String valorPonde = null;                       // variable que guardara lo valores de ponderacion ingresados por teclado,
+        Double[] ponderacion = new Double[n2];          // arreglo double que guardara los valores validados con funcion validarPonderado
+        Double verificaPonderado;                       // variable double que acumulara la suma de los valores de ponderacion para comprobrar que llega a 100.0
+        Double NotaPonderado;                           // variable double auxiliar que se le asignara el valor ingresado por teclado y validado
+        boolean cien = true;                            // booleano para repetir ingreso de valores de ponderacion mientras se capturen datos erroneos en el ciclo for
+
+        int cursoz = n;                                 // variable que indicara la cantidad de Cursos dentro del programa
+        int alumnoy = n1;                               // variable que indicara la cantidad de Alumnos dentro del programa
+        int notax = n2;                                 // variable que indicara la cantidad de Notas dentro del programa
+        int auxi = 0;                                   // variable auxiliar para usarla en el ingreso de datos de Ponderacion
+
+        
+        //ITERACION PARA INGRESAR VALORES DE PONDERACION QUE CUMPLAN CON REQUISITOS
+        // NUMEROS
+        // MAYORES A 0
+        // TOTAL PONDERADO IGUAL A 100
+        // INCLUSO SE PUEDE CORREGIR ULTIMO VALOR INGRESADO DE PONDERACION, SI EL TOTAL NO LLEGA A 100
+        while (auxi == 0) {
+            System.out.println("Ingrese Ponderado por Nota, Gracias");
+
+            while (cien) {
+                verificaPonderado = 0.0;
+                for (int i = 0; i < notax; i++) {
+
+                    valorPonde = validarPonderado(valorPonde);
+                    NotaPonderado = Double.parseDouble(valorPonde);
+                    ponderacion[i] = NotaPonderado;
+                    verificaPonderado = (verificaPonderado + ponderacion[i]);
+                    if (verificaPonderado > 100.0) {
+                        System.out.println("Intente denuevo (Maximo Ponderacion 100%)");
+                        i = notax;
+                    }
+                    // PARA AYUDAR EN EL INGRESO DE DATOS ESTE CODIGO CORRIGE ULTIMO PONDERADO SI EL TOTAL NO LLEGA A 100%
+                    if (n2 > 1) {
+                        if (i == (notax - 1)) {
+                            if (verificaPonderado < 100) {
+                                System.out.println("Corrija Ultima Ponderacion");
+                                verificaPonderado = (verificaPonderado - ponderacion[i]);
+                                i = notax - 2;                  // i SE VUELVE A REINICIAR AL VALOR QUE ESTABA AL LLEGAR A LA PENULTIMA ITERACION DE INGRESO DE DATOS
+                            }
+                        }
+                    }
+
+                }
+                System.out.println("suma ponde " + verificaPonderado);
+                if (verificaPonderado == 100.0) {
+                    cien = false;
+                    auxi = 1;
+                } else {
+                    System.out.println("Verifique la Ponderacion");
+
+                }
+            }
+
+        }
+        for (int i = 0; i < ponderacion.length; i++) {
+            System.out.println(ponderacion[i]);
+
+        }
+
+        for (int i = 0; i < ponderacion.length; i++) {
+            ponderacion[i] = ponderacion[i] / 100;
+
+        }
+
+        Double Acumula = 0.;
+        Double Promedio = 0.;
+
+        Double[] NotasAl = new Double[alumnoy * notax];
+        Double[] Notas = new Double[cursoz * alumnoy * notax];
+        String[] Alumno = new String[cursoz * alumnoy * notax];
+        String[] Curso = new String[cursoz * alumnoy * notax];
+        String[] AlumnoM = new String[cursoz * alumnoy * notax];
+        String[] CursoM = new String[cursoz * alumnoy * notax];
+
+        Double[] Notax = new Double[cursoz * alumnoy * notax];
+        String[] NotasAlumno = new String[alumnoy * notax];
+        String[] CursoAlumno = new String[alumnoy * notax];
+
+        String[] NotasSeleccion = new String[20];
+        Double[] NotasMatriz = new Double[cursoz * alumnoy * notax];
+
+        Double DDatos;
+        String[] Datos2 = new String[20];
+
+        String[][][] matriz = new String[cursoz][alumnoy][notax];
+
+        String Arreglo[] = new String[cursoz * alumnoy * notax];
+        // variables busqueda por nombre
+        int rangoPosArr;
+        int tamBus;
+        int rango;
+        String nombre = null;
+        String posicion;
+        String posicion2;
+        String[] nombreEnc = new String[n2 * n1];
+        String[] nombreEnc2 = new String[n2];
+        Double[] notasEnc = new Double[n2 * n1];
+        Double[] notasEnc2 = new Double[n2];
+        String[] partes = new String[4];
+        String[] partes2 = new String[4];
+
+        String Datos = null;
+        String DatosC = null;
+        String DatosA = null;
+        String DatosN = null;
+
+        int Fx = 0;
+        int tC = 0;
+        int c = 0;
+        int a = 0;
+
+        //teclado.nextLine();
+        
+        //ACA ESTA EL CEREBRO DEL PROGRAMA QUE RECIBE TODOS LOS DATOS DE LA BASE DE DATOS
+        for (int i = 0; i < cursoz; i++) {
+            System.out.print("Ingrese Curso ");
+            DatosC = teclado.nextLine();
+            CursoM[i] = DatosC;
+
+            for (int j = 0; j < alumnoy; j++) {
+                System.out.print("Ingrese Nombre ");
+                DatosA = teclado.nextLine();
+                AlumnoM[j] = DatosA;
+
+                for (int k = 0; k < notax; k++) {
+
+                    Curso[Fx] = DatosC;     // Arreglo auxiliar para comparar curso dentro de la busqueda
+                    Alumno[Fx] = DatosA;    // Arreglo auxiliar para comparar alumno dentro de la busqueda
+
+                    DatosN = validarDatos(DatosN);   // es mejor guardar el valor de la validacion, porque al colocarlo dentro de un cast, vuelve a preguntar el dato.
+                    Notas[Fx] = Double.parseDouble(DatosN);  // aca queda reflejado lo anterior, solo se le entrega el dato validado y queda parsear
+                    tC++;
+
+                    NotasMatriz[Fx] = Double.parseDouble(DatosN);  // TENER MUCHO CUIDADO EN ESTE PUNTO. SE CREAN VALORES SOBREIMPRESOS Y VARIABLE QUE CON DOS VALORES [0] Y [1]
+
+                    matriz[i][j][k] = "ID" + " " + CursoM[i] + " " + AlumnoM[j] + " " + NotasMatriz[Fx];  // aca se guardan todos los datos recopilados. Especial atencion ultimo dato que maneja su propio indice para no reescribir datos, que conduce a Errores de pedir datos a posiciones de Arrays null.
+                    Arreglo[Fx] = "ID" + " " + CursoM[i] + " " + AlumnoM[j] + " " + NotasMatriz[Fx];
+                    Fx++;
+                }
+            }
+
+        }
+        for (int i = 0; i < Curso.length; i++) {
+            System.out.println("curso " + Curso[i]);
+
+        }
+
+        for (int i = 0; i < Alumno.length; i++) {
+            System.out.println("alumno " + Alumno[i]);
+
+        }
+
+        for (int i = 0; i < Notas.length; i++) {
+            System.out.println("notas " + Notas[i]);
+
+        }
+
+        System.out.println("Lista Cursos Ingresado[][][]");
+        for (int k = 0; k < cursoz; k++) {
+            for (int i = 0; i < alumnoy; i++) {
+                for (int j = 0; j < notax; j++) {
+                    System.out.println(matriz[k][i][j]);
+                }
+            }
+        }
+        System.out.println("Lista Curso Clon []");
+        for (int i = 0; i < Arreglo.length; i++) {
+            System.out.println(Arreglo[i]);
+
+        }
+        for (int i = 0; i < NotasMatriz.length; i++) {
+            System.out.println("NotasMatriz [" + i + "]: " + NotasMatriz[i]);
+
+        }
+        boolean encontrado = true;
+        boolean buscar = true;
+        int conta = 0;
+        String CursoE = null;
+
+        int m = 0;
+
+        int totalDatos = cursoz * alumnoy * notax;
+        int datosCurso = totalDatos / cursoz;
+        int tamañoNm = Arreglo.length;
+
+        Double acumuNota = 0.0;
+        String[] CAlum1 = new String[3];
+        String[] CAlum2 = new String[3];
+
+        String part1;
+        String part2;
+
+        
+        //ITERACION BUCLE PARA HACER LAS BUSQUEDA POR CURSO O POR ALUMNO
+        do {
+            int DatoInt;
+            Datos = validarMenu(Datos);
+
+            if (Datos.equals("1")) {
+                encontrado = true;
+                conta = 0;
+                int pos = 0;
+                m = 0;
+                while (encontrado) {
+
+                    pos = 0;
+                    System.out.println("Ingrese Curso busqueda");
+                    Datos = teclado.nextLine();
+
+                    for (int i = 0; i < Curso.length; i++) {
+                        posicion = Curso[i];
+                        partes = posicion.split(" ");
+                        for (int j = 0; j < 1; j++) {
+
+                            if (partes[0].compareTo(Datos) == 0) {
+                                nombreEnc[pos] = Arreglo[i];
+                                notasEnc[pos] = NotasMatriz[i];
+
+                                Notas[pos] = NotasMatriz[i];
+                                pos++;
+                            }
+
+                        }
+
+                    }
+                    //ACA
+                    if (pos > 0) {
+                        encontrado = false;
+                        Acumula = 0.0;
+                        Promedio = 0.0;
+                        for (int i = 0; i < nombreEnc.length; i++) {
+                            System.out.println(nombreEnc[i]);
+
+                        }
+                        for (int i = 0; i < notasEnc.length; i++) {
+                            Acumula = Acumula + Notas[i];
+                        }
+                        Double media;
+                        int tamNE = notasEnc.length;
+                        media = Acumula / tamNE;
+
+                        System.out.println("Promedio: " + Aproximar(media, 1));
+
+                    } else {
+                        if (pos == 0) {
+                            System.out.println("No encontrado");
+
+                        }
+
+                    }
+                }
+
+            }
+
+            if (Datos.equals("2")) {
+                encontrado = true;
+                conta = 0;
+                int pos = 0;
+
+                while (encontrado) {
+
+                    m = 0;
+                    System.out.println("Ingrese Nombre busqueda");
+                    nombre = teclado.nextLine();
+
+                    for (int i = 0; i < Alumno.length; i++) {
+                        posicion2 = Alumno[i];
+                        partes2 = posicion2.split(" ");
+                        for (int j = 0; j < 1; j++) {
+
+                            if (partes2[0].compareTo(nombre) == 0) {
+                                nombreEnc2[m] = Arreglo[i];
+                                notasEnc2[m] = NotasMatriz[i];
+
+                                Notas[m] = NotasMatriz[i];
+                                m++;
+                            }
+
+                        }
+                    }
+                    if (m == 0) {
+                        System.out.println("No encontrado");
+
+                    }
+
+                    //ACA
+                    if (m > 0) {
+
+                        encontrado = false;
+                        Acumula = 0.0;
+                        Promedio = 0.0;
+                        for (int i = 0; i < nombreEnc2.length; i++) {
+                            System.out.println(nombreEnc2[i]+"..... Ponderacion:..... "+(ponderacion[i]*100)+"%");
+
+                        }
+
+                        Acumula = 0.0;
+                        for (int i = 0; i < notasEnc2.length; i++) {
+                            Acumula = Acumula + (notasEnc2[i] * ponderacion[i]);
+                        }
+
+                        System.out.println("Promedio: " + Aproximar(Acumula, 1));
+                    }
+                }
+
+            }
+            int aux = 0;
+            String r = null;
+
+            while (aux == 0) {
+                r = validarUltima(r);
+                if (r.equals("1")) {
+                    encontrado = true;
+                    aux = 1;
+                } else {
+                    if (r.equals("2")) {
+                        encontrado = false;
+                        aux = 1;
+                    }
+
+                }
+
+            }
+
+        } while (encontrado);
+    }
+
+    public static String validarCursoalumnota(String x) {
+        Scanner teclado = new Scanner(System.in);
+        int tC = 0;
+        Double DDatos;
+
+        while (tC == 0) {
+
+            System.out.print("Cantidad: ");
+            try {
+                while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 1) {
+                    System.out.println("Ingrese Cantidad Valida...");
+                    System.out.print("Cantidad: ");
+                }
+
+                tC++;
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error...");
+            }
+        }
+        return x;
+
+    }
+
+    public static String validarPonderado(String x) {
+        Scanner teclado = new Scanner(System.in);
+        int tC = 0;
+        Double DDatos;
+
+        while (tC == 0) {
+
+            System.out.print("Nota: ");
+            try {
+                while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 0 || (DDatos = Double.parseDouble(x)) > 100) {
+                    System.out.println("Ingrese Ponderacion Valida...");
+                    System.out.print("Nota: ");
+                }
+
+                tC++;
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error...");
+            }
+        }
+        return x;
+
+    }
+
+    public static String validarDatos(String x) {
+        Scanner teclado = new Scanner(System.in);
+        int tC = 0;
+        Double DDatos;
+
+        while (tC == 0) {
+
+            System.out.print("Ingrese nota: ");
+            try {
+                while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 0 || (DDatos = Double.parseDouble(x)) > 7) {
+                    System.out.println("Ingrese nota Valida...");
+                    System.out.print("Ingrese nota: ");
+                }
+
+                tC++;
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error...");
+            }
+        }
+        return x;
+    }
+
+    public static String validarMenu(String x) {
+        Scanner teclado = new Scanner(System.in);
+        int tC = 0;
+        int DatoInt;
+
+        while (tC == 0) {
+
+            System.out.println("INGRESE BUSQUEDA");
+            System.out.println("(1)... Busqueda por Curso");
+            System.out.println("(2)... Busqueda por Alumno");
+            try {
+                while ((x = teclado.nextLine()).equals("") || (DatoInt = Integer.parseInt(x)) <= 0 || (DatoInt = Integer.parseInt(x)) > 2) {
+                    System.out.println("Ingrese (1) ó (2)");
+
+                }
+
+                tC++;
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error...");
+            }
+        }
+        return x;
+    }
+
+    public static String validarUltima(String x) {
+        Scanner teclado = new Scanner(System.in);
+        int tC = 0;
+        int DatoInt;
+
+        while (tC == 0) {
+
+            System.out.println("(1)...Otra Busqueda por Curso"
+                    + "\n(2)...Salir");
+            try {
+
+                while ((x = teclado.nextLine()) == null || (DatoInt = Integer.parseInt(x)) <= 0 || (DatoInt = Integer.parseInt(x)) > 2) {
+                    System.out.println("Ingrese (1) ó (2)");
+
+                }
+
+                tC++;
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error...");
+            }
+        }
+        return x;
+    }
+
+    public static Double Aproximar(Double d, int decimalPlace) {
+        return BigDecimal.valueOf(d).setScale(decimalPlace, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
+
+}
