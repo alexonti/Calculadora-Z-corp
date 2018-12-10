@@ -482,8 +482,8 @@ public class PromedioZCorp {
         return x;
     }
 
-    public static Double Aproximar(Double d, int decimalPlace) {
-        return BigDecimal.valueOf(d).setScale(decimalPlace, BigDecimal.ROUND_HALF_UP).doubleValue();
+    public static Double Aproximar(Double x, int cantDecimal) {
+        return BigDecimal.valueOf(x).setScale(cantDecimal, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
 }
