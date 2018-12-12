@@ -30,7 +30,7 @@ public class MenuTerminalIf {
      System.out.println(purplel+ "      *        "+lightgreen+"Calculadora"+purplel+"          *      " +reset);
      System.out.println(purplel+"      * * * * * * * * * * * * * * * * "+reset);
      System.out.println();
-     System.out.println("              "+bold+framed+lightgreen+" Bienvenido "+reset+"          ");
+     System.out.println("              "+framed+lightgreen+" Bienvenido "+reset+"          ");
      System.out.println();
      System.out.println();
      System.out.println(yellow+"Seleccione una de las siguientes opciones \n"+reset);
@@ -53,7 +53,7 @@ public class MenuTerminalIf {
 
      while (!salir) {
 
-         System.out.println(yelli+"1. Operaciones matem�ticas");
+         System.out.println(yelli+"1. Operaciones matemáticas");
          System.out.println("2. Operaciones binarias");
          System.out.println("3. Orden de datos");
          System.out.println("4. Promedios");
@@ -64,14 +64,14 @@ public class MenuTerminalIf {
 
          try {
          	
-             System.out.println(encircled+yellow+"Ingrese una opci�n:\n"+reset);
+             System.out.println(yellow+"Ingrese una opción:\n"+reset);
              opcion = sn.nextInt();
              System.out.println();
 //menu general de la calculadora
              
              switch (opcion) {
                  case 1:
-                     System.out.println(purplel+"Has seleccionado Operaciones matem�ticas \n"+reset);
+                     System.out.println(purplel+"Has seleccionado Operaciones matemáticas \n"+reset);
                      break;
                  case 2:
                      System.out.println(purplel+"Has seleccionado Operaciones binarias \n"+reset);
@@ -101,13 +101,13 @@ public class MenuTerminalIf {
                      System.exit(opcion); //Termina el programa
                      break;
                  default:
-                     System.out.println(red+"\nSeleccione una opci�n entre 1 y 6 \n"+reset);
+                     System.out.println(red+"\nSeleccione una opción entre 1 y 6 \n"+reset);
                     
              } //switch menu principal
              	} //try menu principal
             
           catch (InputMismatchException e) {
-             System.out.println(cyan+"* * * Debes insertar un n�mero* * * \n"+reset);
+             System.out.println(cyan+"* * * Debes insertar un número* * * \n"+reset);
              sn.next();
              
          } // catch menu principal
@@ -117,17 +117,17 @@ public class MenuTerminalIf {
          
          if(opcion==1) {
          	
-         	System.out.println(encircled+yellow+"Seleccione una opci�n");
+         	System.out.println(yellow+"Seleccione una opción");
          	System.out.println();
          	
          	System.out.println(yelli+"1. Suma");
          	System.out.println("2. Resta");
-         	System.out.println("3. Multiplicaci�n");
-         	System.out.println("4. Divisi�n");
+         	System.out.println("3. Multiplicación");
+         	System.out.println("4. División");
          	System.out.println("5. Regresar \n"+reset);
          	try {
          		
-         	    System.out.println(encircled+yellow+"Ingrese una opci�n \n"+reset);
+         	    System.out.println(encircled+yellow+"Ingrese una opción \n"+reset);
          	    opcion2 = sn.nextInt();
          	    System.out.println();
          	    switch (opcion2) {
@@ -143,7 +143,7 @@ public class MenuTerminalIf {
          	            
          	            
          	            while(i<1){                                 // primer while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese a: "+reset);         
+         	                System.out.print(yelli+"Ingrese a: "+reset);         
          	                
          	                try{                                    // primer try para validar primer numero
          	                    x=teclado.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
@@ -155,7 +155,7 @@ public class MenuTerminalIf {
          	            }
          	            
          	            while(j<1){                                 // segundo while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese b: "+reset);        
+         	                System.out.print(yelli+"Ingrese b: "+reset);        
          	                
          	                try{                                    // segundo try para validar primer numero
          	                    y=teclado.nextDouble();                
@@ -177,7 +177,7 @@ public class MenuTerminalIf {
          	            System.out.println();
          	            System.out.println();
          	            System.out.println();
-         	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	            System.out.println(yellow+"Seleccione una opción"+reset);
          	            System.out.println();
          	           
          	            
@@ -194,7 +194,7 @@ public class MenuTerminalIf {
          	            double resultado;
          	            
          	            while(i1<1){                                 // primer while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese a: "+reset);         
+         	                System.out.print(yelli+"Ingrese a: "+reset);         
          	                
          	                try{                                    // primer try para validar primer numero
          	                    x1=teclado2.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
@@ -206,7 +206,7 @@ public class MenuTerminalIf {
          	            }
          	            
          	            while(j1<1){                                 // segundo while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese b: "+reset);        
+         	                System.out.print(yelli+"Ingrese b: "+reset);        
          	                
          	                try{                                    // segundo try para validar primer numero
          	                    y1=teclado2.nextDouble();                
@@ -228,12 +228,12 @@ public class MenuTerminalIf {
  	            System.out.println();
  	            System.out.println();
  	            System.out.println();
- 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+ 	            System.out.println(yellow+"Seleccione una opción"+reset);
  	            System.out.println();
          	            break;
          	            
          	        case 3:
-         	            System.out.println(purplel+"Has seleccionado Multiplicaci�n \n"+reset);
+         	            System.out.println(purplel+"Has seleccionado Multiplicación \n"+reset);
          	            Scanner teclado3=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
          	            double x2 = 0;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
          	            double y2 = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
@@ -246,7 +246,7 @@ public class MenuTerminalIf {
          	            
          	            
          	            while(i2<1){                                 // primer while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese a: ");         
+         	                System.out.print(yelli+"Ingrese a: ");         
          	                
          	                try{                                    // primer try para validar primer numero
          	                    x2=teclado3.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
@@ -258,7 +258,7 @@ public class MenuTerminalIf {
          	            }
          	            
          	            while(j2<1){                                 // segundo while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese b: ");        
+         	                System.out.print(yelli+"Ingrese b: ");        
          	                
          	                try{                                    // segundo try para validar primer numero
          	                    y2=teclado3.nextDouble();                
@@ -287,12 +287,12 @@ public class MenuTerminalIf {
          	            System.out.println();
          	            System.out.println();
          	            System.out.println();
-         	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	            System.out.println(yellow+"Seleccione una opción"+reset);
          	            System.out.println();
     
          	            break;
          	        case 4:
-         	            System.out.println(purplel+"Has seleccionado Divisi�n \n"+reset);
+         	            System.out.println(purplel+"Has seleccionado División \n"+reset);
          	            Scanner teclado4=new Scanner(System.in); // Se crea variable teclado que permite capturar lo que se ingresa por teclado
          	            double x3 = 0;           // Se declara variable Double x, donde se guardara conversion de string a Double primer termino de la suma
          	            double y3 = 0;           // Se declara variable Double y, donde se guardara conversion de string a Double segundo termino de la suma
@@ -305,7 +305,7 @@ public class MenuTerminalIf {
          	            
          	            
          	            while(i3<1){                                 // primer while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese a: ");         
+         	                System.out.print(yelli+"Ingrese a: ");         
          	                
          	                try{                                    // primer try para validar primer numero
          	                    x3=teclado4.nextDouble();             // se puede traspasar directamente a double lo ingresado por teclado
@@ -317,7 +317,7 @@ public class MenuTerminalIf {
          	            }
          	            
          	            while(j3<1){                                 // segundo while para volver a solicitar numero
-         	                System.out.print(yelli+"ingrese b: ");        
+         	                System.out.print(yelli+"Ingrese b: ");        
          	                
          	                try{                                    // segundo try para validar primer numero
          	                    y3=teclado4.nextDouble();                
@@ -346,21 +346,21 @@ public class MenuTerminalIf {
          	            System.out.println();
          	            System.out.println();
          	            System.out.println();
-         	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	            System.out.println(yellow+"Seleccione una opción"+reset);
          	            System.out.println();
          	            break;
          	        case 5://la funcion de division esta abajo 
-         	        	System.out.println(yellow+"\n Ingrese una opci�n \n"+reset);
+         	        	System.out.println(yellow+"\n Ingrese una opción \n"+reset);
          	        	regresar = true; //opci�n que nos devuelve al menu anterior
          	            
          	            break;
          	        default:
-         	            System.out.println(red+"\nSeleccione una opci�n entre 1 y 5 \n"+reset);
+         	            System.out.println(red+"\nSeleccione una opción entre 1 y 5 \n"+reset);
          	    
          	    } //switch operaciones matematicas
          	}//try menu principal
          	catch (InputMismatchException e) {
-         	    System.out.println(red+"Debes insertar un n�mero"+reset);
+         	    System.out.println(red+"Debes insertar un número"+reset);
          	    sn.next();
          	    
          	}
@@ -368,16 +368,15 @@ public class MenuTerminalIf {
      
          if (opcion==2) {
          	
-         	System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	System.out.println(yellow+"Seleccione una opción"+reset);
          	System.out.println();
          	System.out.println(yelli+"1. Suma binaria");
-             System.out.println("2. Suma hexadecimal");
-             System.out.println("3. Cambio de base");
-             System.out.println("4. Regresar"+reset);
+             System.out.println("2. Cambio de base");
+             System.out.println("3. Regresar"+reset);
       
              try {
              	
-                 System.out.println(yellow+"Ingrese una opci�n \n"+reset);
+                 System.out.println(yellow+"Ingrese una opción \n"+reset);
                  opcion3 = sn.nextInt();
                  switch (opcion3) {
                      case 1:
@@ -386,10 +385,10 @@ public class MenuTerminalIf {
                          Scanner Entrada=new Scanner(System.in);
                          String n1="",n2="";
                          	//Se pide 1er numero binario
-                         System.out.print(yelli+"Ingrese 1� numero ");
+                         System.out.print(yelli+"Ingrese el 1er. número ");
                          n1=Entrada.next();
                          	//Se pide 2do numero binario
-                         System.out.print("Ingrese 2� numero "+reset);
+                         System.out.print("Ingrese el 2do. número "+reset);
                          n2=Entrada.next();
                          System.out.println();
                   	    System.out.println(purplel+"***********************************************************"+reset);
@@ -401,27 +400,24 @@ public class MenuTerminalIf {
          	            System.out.println();
          	            System.out.println();
          	            System.out.println();
-         	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	            System.out.println(yellow+"Seleccione una opción"+reset);
          	            System.out.println();
             
                          break;
                          
+                     
                      case 2:
-                         System.out.println(purplel+"Has seleccionado Suma hexadecimal \n"+reset);
-                         
-                         break;
-                     case 3:
                          System.out.println(purplel+"Has seleccionado Cambio de base \n"+reset);
                          
                          Scanner sc=new Scanner (System.in);
-                 		System.out.println(yelli+"Ingrese el numero a transformar");
+                 		System.out.println(yelli+"Ingrese el número a transformar");
                  		String valor5="";
                  		valor5=sc.nextLine();
-                 		System.out.println("Ingrese el numero de la base a transformar");
+                 		System.out.println("Ingrese el número de la base a transformar");
                  		int x5=0;
                  		x5=sc.nextInt();
                  		int num5 = 0;
-                 		System.out.println("Ingrese el numero de la base a la que desea transformar(hasta base 16)"+reset);
+                 		System.out.println("Ingrese el número de la base a la que desea transformar(hasta base 16)"+reset);
                  		int y5=0;
                  		y5=sc.nextInt();
                  		
@@ -433,14 +429,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
@@ -449,14 +445,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if(y5<10){
@@ -465,14 +461,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if (y5>10 && y5<=16){
@@ -481,20 +477,20 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}else{System.out.println();
              	            System.out.println();
                      	    System.out.println(purplel+"***********************************************************"+reset);
-             	            System.out.println(lightgreen+"            La base no es v�lida"); // Se completa el codigo anterior para mostrar resultado aprox.        
+             	            System.out.println(lightgreen+"            La base no es válida"); // Se completa el codigo anterior para mostrar resultado aprox.        
                      	    System.out.println(purplel+"***********************************************************"+reset);
              	            System.out.println();}
                  		}
@@ -504,14 +500,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
@@ -523,14 +519,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if (y5>10 && y5<=16){
@@ -538,14 +534,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
@@ -553,7 +549,7 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"          La base no es v�lida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"          La base no es válida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();}
                  			
@@ -564,14 +560,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
@@ -580,14 +576,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if (y5<10){
@@ -597,14 +593,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if (y5>10 && y5<=16){
@@ -613,21 +609,21 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
                  			else{System.out.println();
              	            System.out.println();
                      	    System.out.println(purplel+"***********************************************************"+reset);
-             	            System.out.println(lightgreen+"             La base no es v�lida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+             	            System.out.println(lightgreen+"             La base no es válida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                      	    System.out.println(purplel+"***********************************************************"+reset);
              	            System.out.println();
              	            }
@@ -642,14 +638,14 @@ public class MenuTerminalIf {
                  			System.out.println();
              	            System.out.println();
                      	    System.out.println(purplel+"***********************************************************"+reset);
-             	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+             	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                      	    System.out.println(purplel+"***********************************************************"+reset);
              	            System.out.println();
              	            System.out.println();
              	            System.out.println();
              	            System.out.println();
              	            System.out.println();
-             	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+             	            System.out.println(yellow+"Seleccione una opción"+reset);
              	            System.out.println();
                  			}
                  			if(y5<10){
@@ -658,14 +654,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  			}
                  			if(y5>10){
@@ -675,14 +671,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  			}
                  		}if(x5>10){
@@ -692,14 +688,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}
@@ -708,14 +704,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if(y5<10){
@@ -725,14 +721,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  			}if (y5>10 && y5<=16){
@@ -741,14 +737,14 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"      El nuevo n�mero transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"      El nuevo número transformado es: "+ respuesta+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
                  	            System.out.println();
-                 	            System.out.println(yellow+"Seleccione una opci�n"+reset);
+                 	            System.out.println(yellow+"Seleccione una opción"+reset);
                  	            System.out.println();
                  				break;
                  }
@@ -756,24 +752,24 @@ public class MenuTerminalIf {
                  				System.out.println();
                  	            System.out.println();
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                 	            System.out.println(lightgreen+"           La base no es v�lida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
+                 	            System.out.println(lightgreen+"           La base no es válida"+reset); // Se completa el codigo anterior para mostrar resultado aprox.        
                          	    System.out.println(purplel+"***********************************************************"+reset);
                  	            System.out.println();
                  			
                          break;}}
                          
                      
-                     case 4:
-                     	System.out.println(yellow+"\n Ingrese una opci�n \n"+reset);
+                     case 3:
+                     	System.out.println(yellow+"\n Ingrese una opción \n"+reset);
                          regresar = true;
                          break;
                      default:
-                         System.out.println(yellow+"\nSeleccione una opci�n entre 1 y 5 \n"+reset);
+                         System.out.println(yellow+"\nSeleccione una opción entre 1 y 5 \n"+reset);
                  }
              } 
          
          catch (InputMismatchException e) {
-                 System.out.println(red+"Debes insertar un n�mero"+reset);
+                 System.out.println(red+"Debes insertar un número"+reset);
                  sn.next();
                  
              }
@@ -785,7 +781,7 @@ public class MenuTerminalIf {
          
          if(opcion==3) {
          	
-         	System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	System.out.println(yellow+"Seleccione una opción"+reset);
          	System.out.println();
          	
          	System.out.println(yelli+"1. Continuar"+reset);
@@ -795,7 +791,7 @@ public class MenuTerminalIf {
       
              try {
              	
-                 System.out.println(yellow+"Ingrese una opci�n \n"+reset);
+                 System.out.println(yellow+"Ingrese una opción \n"+reset);
                  opcion3 = sn.nextInt();
                  switch (opcion3) {
                      case 1:
@@ -807,17 +803,17 @@ public class MenuTerminalIf {
                      		String auxi;
                      		int aux2 = 0;
                      		String ent1;
-                     		System.out.println(yellow+"�Qu� tipo de datos deseas ordenar? \n"+reset);
+                     		System.out.println(yellow+"¿Qué tipo de datos deseas ordenar? \n"+reset);
                      		System.out.println(yelli+"0 - Letras");
-                     		System.out.println("1 - N�meros \n"+reset);
+                     		System.out.println("1 - Números \n"+reset);
                      		int preg=sc.nextInt();
                      		sc.nextLine();
-                     		System.out.println(yelli+"Ingrese la cantidad de elementos a ordenar \n"+reset);
+                     		System.out.println(yelli+"Ingrese la cantidad de números a ordenar \n"+reset);
                      		int sec=sc.nextInt();
                      		sc.nextLine();
                      		System.out.println();
                      		if (preg==0){
-                     			System.out.println(yelli+"Ingrese letras a ordenar \n"+reset);
+                     			System.out.println(yelli+"Ingrese las letras a ordenar \n"+reset);
                      			int orden[]=new int[sec];
                      			String letras[]=new String [sec];
                      		    while(con<sec){
@@ -864,11 +860,11 @@ public class MenuTerminalIf {
                    			  	System.out.println(lightgreen+"El orden de los datos ingresados es: ");
                      		    System.out.println(Arrays.toString(letras)+reset);
                          	    System.out.println(purplel+"***********************************************************"+reset);
-                     		    System.out.println("Ingrese una opci�n: \n");
+                     		    System.out.println("Ingrese una opción: \n");
                      		   
                      		}else{
                      			int orden[]=new int[sec];
-                     			System.out.println(yelli+"Ingrese los n�meros a ordenar \n"+reset);
+                     			System.out.println(yelli+"Ingrese los números a ordenar \n"+reset);
                      			  while(con<sec){
                      			       ent1=sc.nextLine();
                      			       //if(ent1=="-1"){
@@ -878,7 +874,7 @@ public class MenuTerminalIf {
                      			 // else{
                      			          try{a=Integer.parseInt(ent1);}
                      			          catch (NumberFormatException ex){
-                     			        	  System.out.println(red+"Favor de ingresar solo datos num�ricos \n"+reset);
+                     			        	  System.out.println(red+"Favor de ingresar solo datos numéricos \n"+reset);
                      				      //String aux=ent1.toUpperCase();
                      				     // a=Valorletra(ent1);	  
                      			              }
@@ -913,10 +909,10 @@ public class MenuTerminalIf {
                          regresar = true;
                          break;
                      default:
-                         System.out.println(yellow+"\nSeleccione una opci�n entre 1 y 3 \n"+reset);
+                         System.out.println(yellow+"\nSeleccione una opción entre 1 y 3 \n"+reset);
                  }
              } catch (InputMismatchException e) {
-                 System.out.println(red+"Debes insertar un n�mero"+reset);
+                 System.out.println(red+"Debes insertar un número"+reset);
                  sn.next();
                  
              }
@@ -924,7 +920,7 @@ public class MenuTerminalIf {
          
          if(opcion==4) {
          	
-         	System.out.println(yellow+"Seleccione una opci�n"+reset);
+         	System.out.println(yellow+"Seleccione una opción"+reset);
          	System.out.println();
          	
          	System.out.println(yelli+"1. Continuar");
@@ -934,7 +930,7 @@ public class MenuTerminalIf {
       
              try {
              	
-                 System.out.println(yellow+"Ingrese una opci�n \n"+reset);
+                 System.out.println(yellow+"Ingrese una opción \n"+reset);
                  opcion4 = sn.nextInt();
                  switch (opcion4) {
                      case 1:
@@ -979,7 +975,7 @@ public class MenuTerminalIf {
                          // TOTAL PONDERADO IGUAL A 100
                          // INCLUSO SE PUEDE CORREGIR ULTIMO VALOR INGRESADO DE PONDERACION, SI EL TOTAL NO LLEGA A 100
                          while (auxi == 0) {
-                             System.out.println(yelli+"Ingrese ponderado por nota: \n"+reset);
+                             System.out.println(yelli+"Ingrese ponderación de cada nota: \n"+reset);
 
                              while (cien) {
                                  verificaPonderado = 0.0;
@@ -990,7 +986,7 @@ public class MenuTerminalIf {
                                      ponderacion[i] = NotaPonderado;
                                      verificaPonderado = (verificaPonderado + ponderacion[i]);
                                      if (verificaPonderado > 100.0) {
-                                         System.out.println(yelli+"Intente denuevo (Maximo ponderación 100%)"+reset);
+                                         System.out.println(yelli+"Intente de nuevo (Maximo ponderación 100%)"+reset);
                                          i = notax;
                                      }
                                      // PARA AYUDAR EN EL INGRESO DE DATOS ESTE CODIGO CORRIGE ULTIMO PONDERADO SI EL TOTAL NO LLEGA A 100%
@@ -1010,7 +1006,7 @@ public class MenuTerminalIf {
                                      cien = false;
                                      auxi = 1;
                                  } else {
-                                     System.out.println(red+"Verifique la ponderacion"+reset);
+                                     System.out.println(red+"Verifique la ponderación"+reset);
 
                                  }
                              }
@@ -1168,7 +1164,7 @@ public class MenuTerminalIf {
                                  while (encontrado) {
 
                                      pos = 0;
-                                     System.out.println(yellow+"Busqueda por curso"+reset);
+                                     System.out.println(yellow+"Búsqueda por curso"+reset);
                                      Datos = teclado.nextLine();
 
                                      for (int i = 0; i < Curso.length; i++) {
@@ -1224,7 +1220,7 @@ public class MenuTerminalIf {
                                  while (encontrado) {
 
                                      m = 0;
-                                     System.out.println(yellow+"Busqueda por nombre:"+reset);
+                                     System.out.println(yellow+"Búsqueda por nombre:"+reset);
                                      nombre = teclado.nextLine();
 
                                      for (int i = 0; i < Alumno.length; i++) {
@@ -1254,7 +1250,7 @@ public class MenuTerminalIf {
                                          Acumula = 0.0;
                                          Promedio = 0.0;
                                          for (int i = 0; i < nombreEnc2.length; i++) {
-                                             System.out.println(lightgreen+nombreEnc2[i]+"..... Ponderacion:..... "+(ponderacion[i]*100)+"%"+reset);
+                                             System.out.println(lightgreen+nombreEnc2[i]+"..... Ponderación:..... "+(ponderacion[i]*100)+"%"+reset);
 
                                          }
 
@@ -1297,10 +1293,10 @@ public class MenuTerminalIf {
                      
                      
                      default:
-                         System.out.println(yellow+"\nSeleccione una opci�n entre 1 y 2 \n"+reset);
+                         System.out.println(yellow+"\nSeleccione una opción entre 1 y 2 \n"+reset);
                  }
              } catch (InputMismatchException e) {
-                 System.out.println(red+"Debes insertar un n�mero"+reset);
+                 System.out.println(red+"Debes insertar un número"+reset);
                  sn.next();
                  
              }
@@ -1317,7 +1313,7 @@ public class MenuTerminalIf {
              System.out.println(purplel+"*      *    "+cyan+"Calculadora Zeneniana"+purplel+"   *     *"+reset);
              System.out.println(purplel+"*      ******************************     *");
              System.out.println(purplel+"*                                         *");
-             System.out.println(purplel+"*            "+lightgreen+"Creada y dise�ada"+purplel+"            *");
+             System.out.println(purplel+"*            "+lightgreen+"Creada y diseñada"+purplel+"            *");
              System.out.println(purplel+"*            "+cyan+"By Hijos de Zenen"+purplel+"            *");
              System.out.println(purplel+"*                                         *");
              System.out.println(purplel+"*              "+lightgreen+"Inspirada por"+purplel+"              *");
@@ -1368,6 +1364,26 @@ public class MenuTerminalIf {
     
 }
 
+	
+	String black="\033[30m"; 
+	   String red="\033[38;5;196m"; 
+	   String green="\033[32m"; 
+	   String yellow="\033[38;5;208m"; 
+	   String blue="\033[34m"; 
+	   String purple="\033[35m"; 
+	   String cyan="\033[36m"; 
+	   String white="\033[37m"; 
+	   String bgreen="\u001b[38;5;190m";
+	   String reset="\u001B[0m";
+	   String backbwhite="\u001b[47;1m";
+	   String backbgreen="\u001b[48;5;84m";
+	   String underline="\033[4m";
+	   String framed="\033[51m";
+	   String encircled="\033[4m";
+	   String lightgreen="\u001b[38;5;84m";
+	   String bold="\033[1m";
+	   String purplel="\033[38;5;38m";
+	   String yelli="\033[38;5;229m";
 
 public static double Sumar(double x, double y){  // Se declara la Funcion Sumar de tipo Double con dos parametros de entrada x e y
 double total;               // Se declara variable Double total para guardar el total de la suma de dos valores
@@ -1392,7 +1408,7 @@ double result = 0;
 double auxr;
 int result2 = 0;
 if(divisor==0){
-System.out.println("no puede ser cero el divisor");
+System.out.println("No puede ser cero el divisor");
 }
 if(dividendo<0&&divisor<0){
 dividendo=0-dividendo;
@@ -1415,7 +1431,7 @@ residuo++;
 }
 
 if(resto==0){
-System.out.println("el resultado de su division es ");
+System.out.println("El resultado de su división es ");
 System.out.println(simb+residuo);
 }
 if(resto!=0){
@@ -1425,7 +1441,7 @@ resto=resto-divisor;
 residuo1++;
 }
 if(resto==0){
-System.out.println("el resultado de su division es ");
+System.out.println("El resultado de su división es ");
 res=(int)residuo;
 res1=(int)residuo1;
 res2=(int)residuo2;
@@ -1764,7 +1780,7 @@ case"Y":val=26;
 break;
 case"Z":val=27;
 break;
-default:System.out.println("no existe"); 
+default:System.out.println("No existe"); 
 break;
 }
 return val;
@@ -1826,7 +1842,7 @@ case 26:aux="Y";
 break;
 case 27:aux="Z";
 break;
-default:System.out.println("no existe");
+default:System.out.println("No existe");
 break;
 }
 return aux;
@@ -1842,7 +1858,7 @@ public static String validarCursoalumnota(String x) {
         //System.out.print("Cantidad: ");
         try {
             while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 1) {
-                System.out.println("Ingrese Cantidad Valida...");
+                System.out.println("Ingrese Cantidad Válida...");
                 System.out.print("Cantidad: ");
             }
 
@@ -1866,7 +1882,7 @@ public static String validarPonderado(String x) {
         //System.out.print("Nota: ");
         try {
             while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 0 || (DDatos = Double.parseDouble(x)) > 100) {
-                System.out.println("Ingrese Ponderacion Valida...");
+                System.out.println("Ingrese Ponderación Válida...");
                 System.out.print("Nota: ");
             }
 
@@ -1890,7 +1906,7 @@ public static String validarDatos(String x) {
         System.out.print("Ingrese nota: ");
         try {
             while ((x = teclado.nextLine()).equals("0") || (DDatos = Double.parseDouble(x)) < 0 || (DDatos = Double.parseDouble(x)) > 7) {
-                System.out.println("Ingrese nota Valida...");
+                System.out.println("Ingrese nota válida...");
                 System.out.print("Ingrese nota: ");
             }
 
@@ -1912,11 +1928,11 @@ public static String validarMenu(String x) {
 
         System.out.println();
     	System.out.println("*** BUSQUEDA *** \n");
-        System.out.println("(1)... Busqueda por Curso");
-        System.out.println("(2)... Busqueda por Alumno \n");
+        System.out.println("1- Búsqueda por Curso");
+        System.out.println("2- Búsqueda por Alumno \n");
         try {
             while ((x = teclado.nextLine()).equals("") || (DatoInt = Integer.parseInt(x)) <= 0 || (DatoInt = Integer.parseInt(x)) > 2) {
-                System.out.println("Ingrese (1) ó (2)");
+                System.out.println("Ingrese 1 ó 2");
 
             }
 
@@ -1936,12 +1952,12 @@ public static String validarUltima(String x) {
 
     while (tC == 0) {
 
-        System.out.println("(1)...Otra Busqueda por Curso"
+        System.out.println("1- Otra búsqueda por curso"
                 + "\n(2)...Salir");
         try {
 
             while ((x = teclado.nextLine()) == null || (DatoInt = Integer.parseInt(x)) <= 0 || (DatoInt = Integer.parseInt(x)) > 2) {
-                System.out.println("Ingrese (1) ó (2)");
+                System.out.println("Ingrese 1 ó 2");
 
             }
 
